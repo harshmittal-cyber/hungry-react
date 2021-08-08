@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import Menu from "./pages/Menu";
+import Menu from "./pages/ProductsMenu/Menu";
 // import Navbar from "./components/Navbar";
 import Enquiry from "./pages/Enquiry";
 import Giftcard from "./pages/Giftcard";

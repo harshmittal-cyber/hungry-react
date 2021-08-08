@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Navi() {
   return (
-    <nav className="nav bg-white shadow-lg">
+    <nav className="nav bg-white shadow-lg sticky  top-0 z-50">
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between">
           <div className="flex space-x-4">
@@ -18,7 +18,7 @@ function Navi() {
               </Link>
             </div>
             {/* primary nav */}
-            <ul className="flex items-center space-x-1 -mt-2 text-gray-700 text-sm font-thin">
+            <ul className="hidden md:flex items-center space-x-1 -mt-2 text-gray-700 text-sm font-thin">
               <li className="py-5 px-3">
                 <Link to="/">HOME</Link>
               </li>
@@ -49,13 +49,13 @@ function Navi() {
                 <img
                   src="/images/cart2.png"
                   alt="cart"
-                  style={{ height: 28, width: 32 }}
+                  style={{ height: 32, width: 32 }}
                 />
                 <span>Cart</span>
               </div>
             </Link>
             <Link to="/">
-              <div className="py-2 px-5 text-sm bg-yellow-400 text-white rounded-3xl ">
+              <div className="py-2 px-5 text-sm bg-gradient-to-r from-yellow-500 via-yellow-400 to-yellow-300 text-white rounded-3xl ">
                 Login
               </div>
             </Link>
@@ -69,3 +69,4 @@ function Navi() {
 }
 
 export default Navi;
+// bg-gradient-to-r from-yellow-500 via-yellow-400 to-yellow-300
