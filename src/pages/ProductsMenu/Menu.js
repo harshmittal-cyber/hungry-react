@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import ProductCategory from "./ProductCategory";
+import ProductCategory from "./ProductCategory/ProductCategory";
 
-function Menu() {
+const Menu = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
@@ -19,6 +19,6 @@ function Menu() {
       ))}
     </div>
   );
-}
+};
 
 export default Menu;

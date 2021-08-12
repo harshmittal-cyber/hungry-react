@@ -1,7 +1,7 @@
 import React from "react";
 
-function Giftcard() {
+const Giftcard = () => {
   return <div>Gift card</div>;
-}
+};
 
 export default Giftcard;

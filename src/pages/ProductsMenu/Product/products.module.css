@@ -1,0 +1,99 @@
+.productStyle {
+  margin-bottom: 3rem;
+  margin-left: 3.2rem;
+}
+
+.itemStyle {
+  display: flex;
+  flex-flow: row wrap;
+  right: 0;
+  left: 0;
+  max-width: 100%;
+  flex-basis: auto;
+  border-radius: 3px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(0 0 0 / 12%) 0px 2px 2px 0px,
+    rgb(0 0 0 / 12%) 0px 2px 4px 0px;
+  -webkit-box-pack: center;
+  justify-content: center;
+  margin: 0rem;
+}
+
+.backgroundStyle {
+  background-image: url("../../../image/shadow.svg");
+  min-width: 0.3em;
+  min-height: 0.3em;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 6rem;
+  height: 4rem;
+  position: absolute;
+  bottom: 0px;
+}
+
+.img_cvr {
+  height: 8.5rem;
+  width: 100%;
+}
+
+.img_cvr img {
+  width: 100%;
+  height: 100%;
+}
+
+.product_image {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.product_image .priceStyle {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: rgb(255, 255, 255);
+  position: absolute;
+  top: 6.1rem;
+  left: 0.6rem;
+}
+
+.descriptionStyle {
+  border-bottom: 0px;
+  height: 5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.productName {
+  flex-basis: auto;
+  justify-content: flex-start;
+  font-size: 1rem;
+  font-weight: bold;
+  -webkit-box-pack: start;
+}
+
+.rupee::before {
+  content: "\20b9";
+  margin-right: 3px;
+}
+
+.descriptionName {
+  flex-basis: auto;
+  line-height: 1.2;
+  font-size: 0.875rem;
+  color: rgba(122, 122, 122, 0.87);
+  margin-top: 0.5rem;
+  width: 90%;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.buttonSection {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  margin-top: 0.5rem;
+  position: relative;
+}

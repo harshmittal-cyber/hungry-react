@@ -4,7 +4,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Menu from "./pages/ProductsMenu/Menu";
 // import Navbar from "./components/Navbar";
-import Enquiry from "./pages/Enquiry";
+import Enquiry from "./pages/Enquiry/Enquiry";
 import Giftcard from "./pages/Giftcard";
 import Navi from "./components/navi";
 import Cart from "./pages/Cart";
