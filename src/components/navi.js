@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Navi() {
   return (
-    <nav className="nav bg-white shadow-lg sticky  overflow-hidden top-0 z-10">
+    <nav className="nav bg-white  shadow-lg sticky  overflow-hidden top-0 z-10">
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between">
           <div className="flex space-x-4">

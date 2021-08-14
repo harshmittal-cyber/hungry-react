@@ -7,7 +7,7 @@ import Menu from "./pages/ProductsMenu/Menu";
 import Enquiry from "./pages/Enquiry/Enquiry";
 import Giftcard from "./pages/Giftcard";
 import Navi from "./components/navi";
-import Cart from "./pages/Cart";
+import Cart from "./pages/Cart/Cart";
 
 function App() {
   return (

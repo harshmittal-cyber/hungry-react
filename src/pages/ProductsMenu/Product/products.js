@@ -1,5 +1,7 @@
 import React from "react";
 import style from "./products.module.css";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/opacity.css";
 
 const products = (props) => {
   const { product } = props;
@@ -11,7 +13,7 @@ const products = (props) => {
           <div className="w-full">
             <div className={`${style.product_image}`}>
               <div className={`${style.img_cvr}`}>
-                <img
+                <LazyLoadImage
                   src={`http://localhost:3000${product.productImage}`}
                   alt={`${product.name}`}
                 />

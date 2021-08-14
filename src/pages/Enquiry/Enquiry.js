@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { getFormBody } from "../../helpers/utils";
 import style from "./enquiry.module.css";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const Enquiry = () => {
   const initialarray = {
@@ -12,6 +13,9 @@ const Enquiry = () => {
     date: "",
     message: "",
   };
+
+  // background-color: #ff5567;
+  /* background-color: #fc283f; */
 
   const [values, setValues] = useState(initialarray);
   const [error, setError] = useState("");
@@ -43,10 +47,11 @@ const Enquiry = () => {
       <div className={`${style.pizza_enquiry}`}>
         <div className={`${style.pizza_party_container}`}>
           <section className={`text-center`}>
-            <img
+            <LazyLoadImage
               className={`${style.section_img}`}
               src="/images/banner.svg"
               alt="section_img_banner"
+              placeholderSrc="/images/placeholder-image.png"
             />
           </section>
           <section className={`${style.section} md:text-center`}>
@@ -58,7 +63,12 @@ const Enquiry = () => {
               together,it's time to up these unique celebrations with a unique
               feast.
             </p>
-            <img src="/images/Hungry2.svg" alt="section_img" />
+            <LazyLoadImage
+              effect="blur"
+              src="/images/Hungry2.svg"
+              alt="section_img"
+              placeholderSrc="/images/placeholder-image.png"
+            />
           </section>
           <section
             className={`${style.section} ${style.background_grey} text-center`}
@@ -73,10 +83,11 @@ const Enquiry = () => {
               your food. So, you can enjoy your safe virtual celebrations with
               the safest ever virtual feast.
             </p>
-            <img
+            <LazyLoadImage
               className={`${style.section4_img}`}
               src="/images/enquirypizza.png"
               alt="section_img"
+              placeholderSrc="/images/placeholder-image.png"
             />
           </section>
           <section className={`${style.section} text-center`}>
@@ -88,10 +99,11 @@ const Enquiry = () => {
               Virtual Feast. Order some good old favourites from Hungry and
               celebrate with your colleagues in a new and safer way.
             </p>
-            <img
+            <LazyLoadImage
               className={`${style.section4_img}`}
               src="/images/celebration.png"
               alt="section_img"
+              placeholderSrc="/images/placeholder-image.png"
             />
           </section>
           <hr className={`${style.separator}`} />
@@ -109,10 +121,11 @@ const Enquiry = () => {
           {success ? (
             <div className={`${style.form_body}`}>
               <div className={`${style.success_div}`}>
-                <img
+                <LazyLoadImage
                   class={`${style.success_icon}`}
                   src="/images/check.png"
                   alt="success-icon"
+                  placeholderSrc="/images/placeholder-image.png"
                 />
                 <p className={`${style.success_title}`}>Thank You!</p>
                 <p className={`${style.success_description}`}>
