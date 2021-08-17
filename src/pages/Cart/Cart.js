@@ -7,7 +7,11 @@ const Cart = () => {
     // empty cart container
     <div className={`${style.cart}`}>
       <div className={`${style.cart_container}`}>
-        <img src="/images/emptycart.jpg" alt="emptycart" />
+        <img
+          src="/images/emptycart.jpg"
+          alt="emptycart"
+          style={{ width: 151, height: 151 }}
+        />
         <div className={`${style.text_wrapper}`}>
           <span className={style.text_1}>your cart is empty</span>
           <span className={style.text_2}>

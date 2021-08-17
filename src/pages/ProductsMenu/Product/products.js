@@ -7,7 +7,7 @@ const products = (props) => {
   const { product } = props;
 
   return (
-    <div className={`${style.productStyle}`}>
+    <div className={`${style.productStyle} shadow-lg`}>
       <div className="overflow-hidden" data-label={`${product.name}`}>
         <div className={`${style.itemStyle}`}>
           <div className="w-full">

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30pt" height="30.000001pt" viewBox="0 0 30 30.000001" version="1.2">
+<defs>
+<g>
+<symbol overflow="visible" id="glyph0-0">
+<path style="stroke:none;" d="M 1.9375 -16.234375 L 11.28125 -16.234375 L 11.28125 0 L 1.9375 0 Z M 3.09375 -1.15625 L 10.125 -1.15625 L 10.125 -15.078125 L 3.09375 -15.078125 Z M 3.09375 -1.15625 "/>
+</symbol>
+<symbol overflow="visible" id="glyph0-1">
+<path style="stroke:none;" d="M 15.671875 0 L 11.265625 0 L 11.265625 -6.625 L 6.171875 -6.625 L 6.171875 0 L 1.75 0 L 1.75 -16.234375 L 6.171875 -16.234375 L 6.171875 -10.21875 L 11.265625 -10.21875 L 11.265625 -16.234375 L 15.671875 -16.234375 Z M 15.671875 0 "/>
+</symbol>
+</g>
+<clipPath id="clip1">
+  <path d="M 0.484375 0 L 29.515625 0 L 29.515625 29.03125 L 0.484375 29.03125 Z M 0.484375 0 "/>
+</clipPath>
+</defs>
+<g id="surface1">
+<g clip-path="url(#clip1)" clip-rule="nonzero">
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 0.484375 0 L 29.515625 0 L 29.515625 36.289062 L 0.484375 36.289062 Z M 0.484375 0 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 0.484375 0 L 29.515625 0 L 29.515625 29.03125 L 0.484375 29.03125 Z M 0.484375 0 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,34.118652%,34.118652%);fill-opacity:1;" d="M 0.484375 0 L 29.515625 0 L 29.515625 29.03125 L 0.484375 29.03125 Z M 0.484375 0 "/>
+</g>
+<g style="fill:rgb(100%,100%,100%);fill-opacity:1;">
+  <use xlink:href="#glyph0-1" x="6.068043" y="21.676669"/>
+</g>
+</g>
+</svg>
