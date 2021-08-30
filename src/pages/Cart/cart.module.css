@@ -10,8 +10,6 @@
   height: 100%;
   position: relative;
   background: rgb(255, 255, 255);
-  /* top: 90%; */
-  /* margin: auto; */
   left: 4%;
   width: 85%;
   padding: 4rem 0px;
@@ -54,13 +52,23 @@ img {
   text-align: center;
 }
 
-.button_container {
+.button_container,
+.button_container_1 {
   align-items: center;
   margin-top: 1.5rem;
 }
 
 .button_container button {
   padding: 0.7em 1.5rem;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 3px;
+  background-color: #ff5567;
+  border: 1px solid #ff5567;
+}
+
+.button_container_1 button {
+  padding: 0.4em 1.5rem;
   color: #fff;
   text-transform: uppercase;
   border-radius: 3px;

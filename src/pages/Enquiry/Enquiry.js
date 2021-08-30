@@ -116,8 +116,8 @@ const Enquiry = () => {
             </p>
           </section>
         </div>
-        {error ? error : ""}
         <div className={`${style.form}`}>
+          {error ? error : ""}
           {success ? (
             <div className={`${style.form_body}`}>
               <div className={`${style.success_div}`}>

@@ -1,0 +1,16 @@
+.button {
+  border-radius: 4px;
+  color: #fff;
+  text-align: center;
+  display: block;
+  padding: 1em 0.7em 1em 0.7em;
+  width: 62%;
+  border: none;
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  margin-top: 1.5em;
+  letter-spacing: 0.1em;
+}
