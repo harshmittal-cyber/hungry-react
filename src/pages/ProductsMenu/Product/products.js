@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import style from "./products.module.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/opacity.css";
+import { useSelector } from "react-redux";
+import { addToCart } from "../../../actions/cart.action";
 
-const products = (props) => {
+const Products = (props) => {
   const { product } = props;
+  const { isAuth } = useSelector((state) => state.auth);
+  const [adding, setAdding] = useState(false);
+
+  function additemincart(cartproduct) {
+    addToCart(cartproduct);
+  }
 
   return (
     <div className={`${style.productStyle} shadow-lg`}>
@@ -38,22 +46,43 @@ const products = (props) => {
             </div>
             <div className={`${style.buttonSection}`}>
               <div className="self-center">
-                <button
-                  data-label="addtocart"
-                  className="cursor-pointer p-1.5  border rounded  sm:p-2"
-                  style={{ border: "1.5px solid green" }}
-                >
-                  <span
-                    style={{
-                      fontSize: "0.68rem",
-                      fontWeight: "bold",
-                      color: "green",
-                    }}
-                    className="text-white tracking-wider"
+                {isAuth && adding ? (
+                  <button
+                    data-label="addtocart"
+                    className="cursor-pointer p-1.5  border rounded  sm:p-2"
+                    style={{ border: "1.5px solid grey" }}
+                    disabled
                   >
-                    ADD TO CART
-                  </span>
-                </button>
+                    <span
+                      style={{
+                        fontSize: "0.68rem",
+                        fontWeight: "bold",
+                        color: "grey",
+                      }}
+                      className="text-white tracking-wider"
+                    >
+                      Going To Cart
+                    </span>
+                  </button>
+                ) : (
+                  <button
+                    data-label="addtocart"
+                    className="cursor-pointer p-1.5  border rounded  sm:p-2"
+                    style={{ border: "1.5px solid green" }}
+                    onClick={() => additemincart(product)}
+                  >
+                    <span
+                      style={{
+                        fontSize: "0.68rem",
+                        fontWeight: "bold",
+                        color: "green",
+                      }}
+                      className="text-white tracking-wider"
+                    >
+                      ADD TO CART
+                    </span>
+                  </button>
+                )}
               </div>
             </div>
           </div>
@@ -63,4 +92,4 @@ const products = (props) => {
   );
 };
 
-export default products;
+export default Products;

@@ -1,0 +1,37 @@
+.login_section {
+  margin-left: 1rem;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.login_section img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.login_section div {
+  margin-left: 0.3rem;
+}
+
+.login_text {
+  font-size: 0.75rem;
+}
+
+@media screen and (max-width: 768px) {
+  .login_section {
+    position: relative;
+    right: 8px;
+    font-size: 0.6rem;
+  }
+  .login_section img {
+    height: 24px;
+    width: 24px;
+  }
+  .login_text {
+    font-size: 0.6rem;
+  }
+}

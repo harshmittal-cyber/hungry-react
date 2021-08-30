@@ -1,0 +1,56 @@
+.phone_input {
+  display: flex;
+  font-size: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.phone_input input {
+  border: 1px solid rgb(161, 177, 185);
+  border-radius: 2px;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+.country_code {
+  position: relative;
+  width: 15%;
+  margin-right: -3px;
+}
+
+.country_code input {
+  width: 100%;
+  font-size: 0.9rem;
+  border-right: none;
+}
+
+.mobile {
+  display: flex;
+  position: relative;
+  -webkit-box-pack: end;
+}
+
+.mobile input {
+  width: 100%;
+}
+
+@media screen and (max-width: 548px) {
+  .country_code {
+    width: 20%;
+  }
+
+  .country_code input {
+    padding-right: 0.2rem;
+  }
+}
+
+@media screen and (max-width: 346px) {
+  .country_code {
+    width: 20%;
+  }
+
+  .country_code input {
+    padding-right: 0.1rem;
+    padding-left: 0.4rem;
+  }
+}

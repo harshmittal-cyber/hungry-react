@@ -24,10 +24,73 @@ code {
   outline: none;
 }
 
+/* rupee symbol */
+.rupee::before {
+  content: "\20b9";
+  margin-right: 2px;
+}
+
 .root_button {
   background-image: linear-gradient(90deg, #ff5567, #fc283f);
 }
 
 .home_button {
   background-color: #ff5567;
+}
+
+.disable_button {
+  background-color: rgb(179, 179, 179);
+  appearance: none;
+  cursor: not-allowed;
+  border-radius: 4px;
+  color: #fff;
+  text-align: center;
+  display: block;
+  padding: 1em 0.7em 1em 0.7em;
+  width: 62%;
+  border: none;
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  margin-top: 1.5em;
+  letter-spacing: 0.1em;
+}
+
+/* width */
+.col-12-12 {
+  width: 100%;
+}
+
+.col-6-12 {
+  width: 50%;
+}
+
+.col-9-12 {
+  width: 75%;
+}
+
+.col-4-12 {
+  width: 33.33%;
+}
+
+.col-3-12 {
+  width: 25%;
+}
+
+/* flex */
+.flex_row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex_column {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-center {
+  display: flex;
+  align-items: center;
 }

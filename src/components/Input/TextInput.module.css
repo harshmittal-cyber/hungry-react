@@ -1,0 +1,21 @@
+.input_container {
+  position: relative;
+  padding: 0;
+  min-height: 64px;
+}
+
+.input {
+  display: block;
+  width: 100%;
+  padding: 6px 12px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #495057;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  background: #ffffff;
+  border: 1px solid #c8c8c8;
+  box-sizing: border-box;
+
+  border-radius: 4px;
+  resize: none;
+}
