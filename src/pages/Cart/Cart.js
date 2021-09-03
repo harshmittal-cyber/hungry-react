@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import CartItem from "./CartItem/CartItem";
 import { deleteitem } from "../../helpers/http/index";
-
 import { addToCart, getcartItems } from "../../actions/cart.action";
 
 const Cart = () => {
@@ -82,15 +81,6 @@ const Cart = () => {
                         </div>
                       </div>
                     </div>
-                    {/* <div
-                      className={`block w-9/12`}
-                      style={{ margin: "5px 10px 0px 0px" }}
-                    >
-                      <div
-                        className={`${styles.delievery}`}
-                        style={{ float: "right" }}
-                      ></div>
-                    </div> */}
                   </div>
                   <div
                     className={`${styles.cartitemclass} w-full`}
@@ -106,9 +96,13 @@ const Cart = () => {
                       />
                     ))}
                   </div>
-                  <div></div>
+                  <div>
+                    {" "}
+                    <Link to="/checkout">Place Order</Link>
+                  </div>
                 </div>
               </div>
+
               <div
                 className={`${styles.cart_right_section} col-4-12`}
                 style={{ padding: "0px 0px 0px 16px" }}
@@ -128,14 +122,14 @@ const Cart = () => {
                           </div>
                           <span>{getCartTotal()}</span>
                         </div>
-                        <div className={`${styles.price_section}`}>
+                        {/* <div className={`${styles.price_section}`}>
                           <div className={`${styles.details}`}>
                             <div className={`${styles.details1}`}>Discount</div>
                           </div>
                           <div className={`${styles.detail_color} rupee`}>
                             -175
                           </div>
-                        </div>
+                        </div> */}
                         <div className={`${styles.price_section}`}>
                           <div className={`${styles.details}`}>
                             <div className={`${styles.details1}`}>

@@ -1,18 +1,22 @@
 import { addtocart, getcart } from "../helpers/http/index";
 import { setCart } from "../store/cart";
 import store from "../store/index";
-// import { useDispatch as dispatch } from "react-redux";
 
 export const getcartItems = async () => {
   try {
+    const { auth } = store.getState();
     const { dispatch } = store;
-    const res = await getcart();
-    if (res.status === 200) {
-      const { cartItems } = res.data;
-      const cartTotalItems = Object.keys(res.data.cartItems).length;
-      if (cartItems) {
-        dispatch(setCart({ cartItems, cartTotalItems }));
+    if (auth.isAuth) {
+      const res = await getcart();
+      if (res.status === 200) {
+        const { cartItems } = res.data;
+        const cartTotalItems = Object.keys(res.data.cartItems).length;
+        if (cartItems) {
+          dispatch(setCart({ cartItems, cartTotalItems }));
+        }
       }
+    } else {
+      return;
     }
   } catch (err) {
     console.log(err);

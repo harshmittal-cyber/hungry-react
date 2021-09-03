@@ -16,9 +16,13 @@ const Login = () => {
     setStep(step + 1);
   }
 
+  function onPrev() {
+    setStep(step - 1);
+  }
+
   return (
     <div>
-      <Step onNext={onNext} />
+      <Step onNext={onNext} onPrev={onPrev} />
     </div>
   );
 };

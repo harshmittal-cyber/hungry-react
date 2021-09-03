@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { setAuth } from "../../store/auth";
 import { useDispatch, useSelector } from "react-redux";
 import { logOut } from "../../helpers/http/index";
-import style from "./Navbar.module.css";
+import styles from "./navi.module.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { resetCart } from "../../store/cart";
 
@@ -22,111 +22,140 @@ const Navbar = () => {
       console.log("error", err.message);
     }
   }
+
   return (
-    <nav className="nav bg-white  shadow-lg sticky  overflow-hidden top-0 z-10">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex justify-between">
-          <div className="flex space-x-4">
-            {/* logo */}
-            <div className="flex items-center">
+    <div className={`${styles.navbar}`}>
+      <div className={`${styles.header}`}>
+        <div className={`${styles.header_container}`}>
+          <div className={`${styles.hamburger_container}`}>
+            {/* <img src="/images/hamburger.svg" alt="hamburger" /> */}
+            <div className={`${styles.stick} ${styles.stick1}`}></div>
+            <div className={`${styles.stick} ${styles.stick2}`}></div>
+            <div className={`${styles.stick} ${styles.stick3}`}></div>
+          </div>
+          <div className={`${styles.header_content} ${styles.middle_header}`}>
+            <div className={`${styles.main_logo}`}>
               <Link to="/">
                 <img
                   src="/images/hungrylogo.svg"
-                  alt="brand-logo"
-                  style={{ height: 65, width: 160 }}
+                  alt="Hungry"
+                  style={{ objectFit: "cover" }}
                 />
               </Link>
             </div>
-            {/* primary nav */}
-            <ul className="hidden md:flex items-center space-x-1 -mt-2 text-gray-700 text-sm font-thin">
-              <li className="py-5 px-3">
-                <Link to="/">HOME</Link>
-              </li>
-
-              <li className="py-5 px-3">
-                <Link to="/menu">MENU</Link>
-              </li>
-
-              <li className="py-5 px-3 flex">
-                <Link to="/gift-card">GIFT CARD </Link>
-              </li>
-              <li className="py-5 px-3">
-                <Link to="/enquiry">ENQUIRY</Link>
-              </li>
-              <li className="py-5 px-3 hover:text-black-900">
-                <Link to="/about">ABOUT</Link>
-              </li>
-
-              <li className="py-5 px-3">
-                <Link to="/contact">CONTACT</Link>
-              </li>
+            <ul className={`${styles.menu_items} text-gray-700`}>
+              <Link to="/">
+                <li className={`${styles.menu_item} `}>Home</li>
+              </Link>
+              <Link to="/menu">
+                <li className={`${styles.menu_item}`}>Menu</li>
+              </Link>
+              <Link to="/enquiry">
+                <li className={`${styles.menu_item} `}>Enquiry</li>
+              </Link>
+              <Link to="/about">
+                <li className={`${styles.menu_item} `}>About</li>
+              </Link>
+              <Link to="/contact">
+                <li className={`${styles.menu_item} `}>Contact</li>
+              </Link>
             </ul>
           </div>
-          {/* secondary nav */}
-          <div className="flex items-center space-x-2 -mt-2">
+          <div className={`${styles.header_content} ${styles.right_content}`}>
             <Link to="/cart">
               <div className="relative py-5 px-3 flex items-center">
-                <LazyLoadImage
-                  src="/images/cart2.png"
-                  alt="cart"
-                  style={{ height: 24, width: 24 }}
-                />
                 {isAuth ? (
-                  <span
-                    className={`absolute left-4 top-1 root_button text-white text-xs rounded py-0.2 ${
-                      cartTotalItems < 10 ? "px-1.5" : "px-1"
-                    } mt-2 `}
-                  >
-                    {!cartTotalItems ? 0 : cartTotalItems}
-                  </span>
+                  <>
+                    <LazyLoadImage
+                      src="/images/cart.svg"
+                      alt="cart"
+                      style={{ height: 28, width: 28 }}
+                    />
+
+                    <span
+                      className={`absolute left-4 top-1 root_button text-white text-xs rounded py-0.2 ${
+                        cartTotalItems < 10 ? "px-2" : "px-1.5"
+                      } mt-2 `}
+                    >
+                      {!cartTotalItems ? 0 : cartTotalItems}
+                    </span>
+                  </>
                 ) : (
                   ""
                 )}
-                <span className="text-gray-700">Cart</span>
               </div>
             </Link>
+
             {isAuth ? (
-              <div className={`${style.login_section}`}>
+              <div className={`${styles.login_section}`}>
                 <LazyLoadImage
                   src="/images/avatar.jpg"
                   alt="avatar"
                   data-label="profile"
+                  className={`${styles.profile_image}`}
                 />
-                <div>
-                  <div className="text-gray-900">
-                    {user.name ? user.name : ""}
+                <div className={`${styles.relative_container}`}>
+                  <div className={`${styles.profile_dropdown} text-gray-600`}>
+                    <div className={`${styles.user_name} text-gray-700`}>
+                      {user.name ? user.name : user.phone}
+                    </div>
+                    <div className={`${styles.logoutbtn}`}>
+                      <div
+                        className={`${styles.logout_button} root_button`}
+                        onClick={logoutuser}
+                      >
+                        Logout
+                      </div>
+                    </div>
                   </div>
-                  <div className={`${style.login_text}`}>{user.phone}</div>
                 </div>
               </div>
             ) : (
               <Link to="/login">
-                <div
-                  className={`root_button py-2 px-5  text-sm text-white rounded-3xl tracking-wider`}
-                >
-                  Login
+                <div>
+                  <button
+                    className={`${styles.login_button} ${styles.login_button_v2} ${styles.button_color} root_button`}
+                  >
+                    LOGIN
+                  </button>
                 </div>
               </Link>
             )}
-            {isAuth ? (
-              <button
-                className={`root_button py-2 px-4  text-sm text-white rounded-3xl tracking-wider`}
-                onClick={logoutuser}
-              >
+            {/* {isAuth ? (
+              <div className={`root_button`} onClick={logoutuser}>
                 Logout
-              </button>
+              </div>
             ) : (
               ""
-            )}
+            )} */}
+          </div>
+        </div>
+        <div
+          className={`${styles.responsive_drawer} ${styles.animated} ${styles.fadeIn}`}
+        >
+          <div className={`${styles.responsive_drawer_content} text-gray-600`}>
+            <div>
+              <Link to="/">
+                <div className={`${styles.tab_title}`}>Home</div>
+              </Link>
+              <Link to="/menu">
+                <div className={`${styles.tab_title}`}>Menu</div>
+              </Link>
+              <Link to="/enquiry">
+                <div className={`${styles.tab_title}`}>Enquiry</div>
+              </Link>
+              <Link to="/#">
+                <div className={`${styles.tab_title}`}>About</div>
+              </Link>
+              <Link to="/#">
+                <div className={`${styles.tab_title}`}>Contact</div>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
-
-      {/* mobile menu */}
-    </nav>
+    </div>
   );
 };
 
 export default Navbar;
-// bg-gradient-to-r from-yellow-500 via-yellow-400 to-yellow-300
-//

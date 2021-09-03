@@ -9,8 +9,8 @@ const ProductCategory = (props) => {
     <div className="relative top-4">
       <div className="ref">
         <div className={`${style.hrStyle}`}></div>
-        <div className={`${style.categoryStyle}`}>
-          <div className="text-sm md:text-base font-normal w-full ">
+        <div className={`${style.categoryStyle} shadow-sm`}>
+          <div className="text-sm md:text-base font-normal w-full  ">
             {category.name}
           </div>
         </div>

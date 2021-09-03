@@ -1,0 +1,62 @@
+.otp_input {
+  margin: 10px;
+  height: 40px;
+  width: 35px;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  font-family: arimo;
+  font-size: 1.2rem;
+  background: #eef2f3;
+  color: #1d1c1c;
+}
+
+.userInput {
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  border-radius: 4px;
+  color: #fff;
+  text-align: center;
+  display: block;
+  padding: 1em 0.7em 1em 0.7em;
+  width: 71%;
+  border: none;
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  margin-top: 1.5em;
+  letter-spacing: 0.1em;
+}
+
+.resend {
+  margin-top: 10px;
+  letter-spacing: 0.5px;
+  word-spacing: 1px;
+}
+
+.resend_button {
+  color: #ff5567;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 418px) {
+  .resend {
+    letter-spacing: 0px;
+    word-spacing: 0.3px;
+  }
+  .button {
+    width: 90%;
+  }
+  .otp_input {
+    margin: 7px;
+    height: 40px;
+    width: 28px;
+    border: none;
+    font-size: 1rem;
+  }
+}

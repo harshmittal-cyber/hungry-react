@@ -11,6 +11,10 @@ const Products = (props) => {
   const [adding, setAdding] = useState(false);
 
   function additemincart(cartproduct) {
+    setAdding(true);
+    setTimeout(function () {
+      setAdding(false);
+    }, 500);
     addToCart(cartproduct);
   }
 

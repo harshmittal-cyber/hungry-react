@@ -53,7 +53,8 @@
 /* cart item */
 .cartitemclass {
   display: block;
-  height: 500px;
+  height: auto;
+  max-height: 500px;
   overflow-y: scroll;
 }
 .itemclass {

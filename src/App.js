@@ -5,15 +5,22 @@ import Enquiry from "./pages/Enquiry/Enquiry";
 import Navbar from "./components/Navbar/Navbar";
 import Cart from "./pages/Cart/Cart";
 import Login from "./pages/Login/Login";
+import Checkout from "./pages/Checkout/checkout";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
 import { useLoading } from "./hooks/loader";
+import { getcartItems } from "./actions/cart.action";
 
 function App() {
   const { loading } = useLoading();
+  const { isAuth } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    getcartItems();
+  }, [isAuth]);
 
   return loading ? (
-    <div className="flex  animate-bounce items-center justify-center text-xl">
-      loading...
-    </div>
+    <div className="absolute top-52 left-52">loading...</div>
   ) : (
     <Router>
       <div className="App">
@@ -33,6 +40,9 @@ function App() {
           </Route>
           <Route path="/login">
             <Login />
+          </Route>
+          <Route path="/checkout">
+            <Checkout />
           </Route>
         </Switch>
       </div>
