@@ -6,7 +6,7 @@ const ProductCategory = (props) => {
   const { category } = props;
 
   return (
-    <div className="relative top-4">
+    <div className={`${style.product_category}`}>
       <div className="ref">
         <div className={`${style.hrStyle}`}></div>
         <div className={`${style.categoryStyle} shadow-sm`}>
@@ -15,10 +15,7 @@ const ProductCategory = (props) => {
           </div>
         </div>
       </div>
-      {/* <div className="mr-4 relative h-4/5  flex flex-wrap mb-2  md:mr-8 lg:mr-28 xl:mr-52 2xl:mr-80  "> */}
-      <div
-        className={`${style.category_product}  relative  mb-2 h-4/5 grid  grid-cols-1 sm:grid-cols-2  md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 relative h-4/5`}
-      >
+      <div className={`${style.category_product} ${style.category_grid}  `}>
         {category.products.map((products) => (
           <Products key={products._id} product={products} />
         ))}

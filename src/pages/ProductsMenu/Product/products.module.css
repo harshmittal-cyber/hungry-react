@@ -72,6 +72,11 @@
   -webkit-box-pack: start;
 }
 
+.rupee_content {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
 .rupee::before {
   content: "\20b9";
   margin-right: 3px;
@@ -96,4 +101,23 @@
   flex-direction: row-reverse;
   margin-top: 0.5rem;
   position: relative;
+}
+
+.addtocart {
+  cursor: pointer;
+  border-radius: 0.25rem;
+  padding: 0.375rem;
+}
+
+@media (min-width: 648px) {
+  .addtocart {
+    padding: 0.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .rupee_content {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
 }

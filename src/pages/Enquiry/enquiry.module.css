@@ -14,7 +14,6 @@ p {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding: 2em 48px;
 }
 
 .section_img {

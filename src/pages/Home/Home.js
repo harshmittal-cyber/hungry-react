@@ -1,18 +1,14 @@
 import React from "react";
+import style from "./Home.module.css";
 
 const Home = () => {
   return (
-    <div>
-      <div>
-        <div>
-          <p>Be The Fastest In Delievering Your Food</p>
-          <p className={`text-gray-600`}>
-            Our job is to filling your tummy with delicious food and with fast
-            and free delivery
-          </p>
-          <button className={`home_button text-white`}>Explore Menu</button>
+    <div className={`${style.intro_main}`}>
+      <div className={`${style.intro}`}>
+        <div className={`${style.z}`}>
+          <div>Hi</div>
+          <div>Harsh</div>
         </div>
-        <div></div>
       </div>
     </div>
   );

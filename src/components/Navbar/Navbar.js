@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { setAuth } from "../../store/auth";
 import { useDispatch, useSelector } from "react-redux";
 import { logOut } from "../../helpers/http/index";
-import styles from "./navi.module.css";
+import styles from "./Navbar.module.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { resetCart } from "../../store/cart";
+import { Sidebar } from "./Sidebar";
 
 const Navbar = () => {
   const dispatch = useDispatch();
   const { isAuth, user } = useSelector((state) => state.auth);
   const { cartTotalItems } = useSelector((state) => state.cart);
+  const [sidebar, setSidebar] = useState(false);
 
   //logout function
   async function logoutuser() {
@@ -23,8 +25,12 @@ const Navbar = () => {
     }
   }
 
+  const sidebartoggle = () => {
+    setSidebar(!sidebar);
+  };
+
   return (
-    <div className={`${styles.navbar}`}>
+    <div className={`${styles.navbar} shadow-lg`}>
       <div className={`${styles.header}`}>
         <div className={`${styles.header_container}`}>
           <div className={`${styles.hamburger_container}`}>
@@ -44,24 +50,18 @@ const Navbar = () => {
               </Link>
             </div>
             <ul className={`${styles.menu_items} text-gray-700`}>
-              <Link to="/">
-                <li className={`${styles.menu_item} `}>Home</li>
-              </Link>
-              <Link to="/menu">
-                <li className={`${styles.menu_item}`}>Menu</li>
-              </Link>
-              <Link to="/enquiry">
-                <li className={`${styles.menu_item} `}>Enquiry</li>
-              </Link>
-              <Link to="/about">
-                <li className={`${styles.menu_item} `}>About</li>
-              </Link>
-              <Link to="/contact">
-                <li className={`${styles.menu_item} `}>Contact</li>
-              </Link>
+              {Sidebar.map((item, index) => {
+                return (
+                  <Link to={item.path}>
+                    <li key={index} className={`${styles.menu_item}`}>
+                      {item.title}
+                    </li>
+                  </Link>
+                );
+              })}
             </ul>
           </div>
-          <div className={`${styles.header_content} ${styles.right_content}`}>
+          <div className={`${styles.header_content}`}>
             <Link to="/cart">
               <div className="relative py-5 px-3 flex items-center">
                 {isAuth ? (
@@ -121,35 +121,28 @@ const Navbar = () => {
                 </div>
               </Link>
             )}
-            {/* {isAuth ? (
-              <div className={`root_button`} onClick={logoutuser}>
-                Logout
-              </div>
-            ) : (
-              ""
-            )} */}
           </div>
         </div>
         <div
-          className={`${styles.responsive_drawer} ${styles.animated} ${styles.fadeIn}`}
+          className={`${styles.responsive_drawer} ${
+            sidebar ? styles.active : ""
+          }  ${styles.animated} ${styles.fadeIn}`}
         >
           <div className={`${styles.responsive_drawer_content} text-gray-600`}>
             <div>
-              <Link to="/">
-                <div className={`${styles.tab_title}`}>Home</div>
-              </Link>
-              <Link to="/menu">
-                <div className={`${styles.tab_title}`}>Menu</div>
-              </Link>
-              <Link to="/enquiry">
-                <div className={`${styles.tab_title}`}>Enquiry</div>
-              </Link>
-              <Link to="/#">
-                <div className={`${styles.tab_title}`}>About</div>
-              </Link>
-              <Link to="/#">
-                <div className={`${styles.tab_title}`}>Contact</div>
-              </Link>
+              {Sidebar.map((item, index) => {
+                return (
+                  <Link to={item.path}>
+                    <div
+                      key={index}
+                      className={`${styles.tab_title}`}
+                      onClick={sidebartoggle}
+                    >
+                      {item.title}
+                    </div>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </div>

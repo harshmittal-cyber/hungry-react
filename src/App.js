@@ -6,10 +6,15 @@ import Navbar from "./components/Navbar/Navbar";
 import Cart from "./pages/Cart/Cart";
 import Login from "./pages/Login/Login";
 import Checkout from "./pages/Checkout/checkout";
+import Orders from "./pages/Order/Orders/orders";
+import Orderdetail from "./pages/Order/orderdetail/orderdetail";
+import Page404 from "./pages/Page404/Page404";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useLoading } from "./hooks/loader";
 import { getcartItems } from "./actions/cart.action";
+import { getAddress } from "./actions/address.action";
+import { getOrders } from "./actions/order.action";
 
 function App() {
   const { loading } = useLoading();
@@ -17,6 +22,7 @@ function App() {
 
   useEffect(() => {
     getcartItems();
+    getAddress();
   }, [isAuth]);
 
   return loading ? (
@@ -26,24 +32,15 @@ function App() {
       <div className="App">
         <Navbar />
         <Switch>
-          <Route path="/" exact>
-            <Home />
-          </Route>
-          <Route path="/menu">
-            <Menu />
-          </Route>
-          <Route path="/enquiry">
-            <Enquiry />
-          </Route>
-          <Route path="/cart">
-            <Cart />
-          </Route>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="/checkout">
-            <Checkout />
-          </Route>
+          <Route path="/" component={Home} exact />
+          <Route path="/menu" component={Menu} />
+          <Route path="/enquiry" component={Enquiry} />
+          <Route path="/cart" component={Cart} />
+          <Route path="/login" component={Login} />
+          <Route path="/checkout" component={Checkout} />
+          <Route path="/user/orders" component={Orders} />
+          <Route path="/user/order_details" component={Orderdetail} />
+          <Route component={Page404} />
         </Switch>
       </div>
     </Router>

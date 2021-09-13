@@ -16,6 +16,16 @@ export const addtocart = (data) => api.post("api/v1//user/cart/additem", data);
 export const getcart = () => api.post(`/api/v1/user/cart/getcart`);
 export const deleteitem = (data) =>
   api.post("api/v1/user/cart/deleteitem", data);
+export const createaddress = (data) =>
+  api.post("/api/v1/user/address/addaddress", data);
+
+export const getaddress = () => api.post("/api/v1/user/address/getaddress");
+export const addorder = (data) =>
+  api.post("/api/v1/user/order/placeorder", data);
+
+export const getorders = () => api.post("/api/v1/user/order/getorders");
+export const getorder = (data) => api.post("/api/v1/user/order/getorder", data);
+
 //Interceptors
 api.interceptors.response.use(
   (config) => {

@@ -95,3 +95,39 @@ code {
   display: flex;
   align-items: center;
 }
+
+/* width */
+.width-100 {
+  width: 100%;
+}
+
+/* text color */
+.text_white {
+  color: rgba(255, 255, 255, 1);
+}
+
+/* letter spacing */
+
+.tracking_tighter {
+  letter-spacing: -0.05em;
+}
+.tracking_tight {
+  letter-spacing: -0.025em;
+}
+.tracking_normal {
+  letter-spacing: 0em;
+}
+.tracking_wide {
+  letter-spacing: 0.025em;
+}
+.tracking_wider {
+  letter-spacing: 0.05em;
+}
+.tracking_widest {
+  letter-spacing: 0.1em;
+}
+
+/* align self */
+.self_center {
+  align-self: center;
+}

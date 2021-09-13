@@ -14,3 +14,9 @@
   margin-top: 1.5em;
   letter-spacing: 0.1em;
 }
+
+@media screen and (max-width: 552px) {
+  .button {
+    width: 80%;
+  }
+}

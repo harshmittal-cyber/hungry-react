@@ -22,7 +22,7 @@ const Products = (props) => {
     <div className={`${style.productStyle} shadow-lg`}>
       <div className="overflow-hidden" data-label={`${product.name}`}>
         <div className={`${style.itemStyle}`}>
-          <div className="w-full">
+          <div className="width-100">
             <div className={`${style.product_image}`}>
               <div className={`${style.img_cvr}`}>
                 <LazyLoadImage
@@ -32,13 +32,13 @@ const Products = (props) => {
               </div>
               <div className={`${style.backgroundStyle}`}></div>
               <div className={`${style.priceStyle}  `}>
-                <span className={`${style.rupee}  text-sm xl:text-base`}>
+                <span className={`${style.rupee} ${style.rupee_content}`}>
                   {product.price}
                 </span>
               </div>
             </div>
           </div>
-          <div className="w-full flex-wrap flex-basis m-3 ">
+          <div className="width-100 flex-wrap flex-basis m-3 ">
             <div className={`${style.descriptionStyle}`}>
               <span className={`${style.productName}`}>{product.name}</span>
               <span
@@ -49,11 +49,11 @@ const Products = (props) => {
               </span>
             </div>
             <div className={`${style.buttonSection}`}>
-              <div className="self-center">
+              <div className="self_center">
                 {isAuth && adding ? (
                   <button
                     data-label="addtocart"
-                    className="cursor-pointer p-1.5  border rounded  sm:p-2"
+                    className={`${style.addtocart}`}
                     style={{ border: "1.5px solid grey" }}
                     disabled
                   >
@@ -63,7 +63,7 @@ const Products = (props) => {
                         fontWeight: "bold",
                         color: "grey",
                       }}
-                      className="text-white tracking-wider"
+                      className="text_white tracking_wider"
                     >
                       Going To Cart
                     </span>
@@ -71,7 +71,7 @@ const Products = (props) => {
                 ) : (
                   <button
                     data-label="addtocart"
-                    className="cursor-pointer p-1.5  border rounded  sm:p-2"
+                    className={`${style.addtocart}`}
                     style={{ border: "1.5px solid green" }}
                     onClick={() => additemincart(product)}
                   >
@@ -81,7 +81,7 @@ const Products = (props) => {
                         fontWeight: "bold",
                         color: "green",
                       }}
-                      className="text-white tracking-wider"
+                      className="text_white tracking_wider"
                     >
                       ADD TO CART
                     </span>

@@ -122,14 +122,6 @@ const Cart = () => {
                           </div>
                           <span>{getCartTotal()}</span>
                         </div>
-                        {/* <div className={`${styles.price_section}`}>
-                          <div className={`${styles.details}`}>
-                            <div className={`${styles.details1}`}>Discount</div>
-                          </div>
-                          <div className={`${styles.detail_color} rupee`}>
-                            -175
-                          </div>
-                        </div> */}
                         <div className={`${styles.price_section}`}>
                           <div className={`${styles.details}`}>
                             <div className={`${styles.details1}`}>
