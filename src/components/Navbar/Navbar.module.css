@@ -179,27 +179,27 @@
   color: #fff;
 }
 /* responsive drawer */
-.animated {
-  -webkit-animation-duration: 0.3s;
-  animation-duration: 0.3s;
-}
 
 .responsive_drawer {
-  display: none;
-  top: auto;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
   height: calc(100vh - 55px);
-  width: 100vw;
-  z-index: 1000;
-  background-color: #fff;
+  width: 45vw;
+  background-color: #f1f6fa;
+  transition: ease-in-out 0.4s;
+  overflow-x: hidden;
+  transform: translateX(0);
 }
 
 .active {
   display: none;
 }
 
-.fadeIn {
-  -webkit-animation-name: fadeIn;
-  animation-name: fadeIn;
+.active_drawer {
+  display: flex;
+  top: auto;
 }
 
 .responsive_drawer .responsive_drawer_content {

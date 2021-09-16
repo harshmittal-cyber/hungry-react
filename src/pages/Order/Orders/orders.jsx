@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { getOrders } from "../../../actions/order.action";
 
 const Orders = () => {
   const { orders } = useSelector((state) => state.order);
+  const { isAuth } = useSelector((state) => state.auth);
 
   useEffect(() => {
     getOrders();
@@ -13,28 +13,39 @@ const Orders = () => {
   return (
     <div>
       <div>
-        {orders.map((order) => {
-          return (
-            <>
-              hey
-              {/* {order.items.map((orderitem) => {
-                return (
-                  <Link
-                    to={`/user/order_details?order_id=${order._id}&item_id=${orderitem._id}`}
-                  >
-                    <div>
-                      <div>
-                        {orderitem.price}
-                        <br />
-                        {orderitem.productId.name}
-                      </div>
+        {isAuth ? (
+          <>
+            {orders.length > 0 ? (
+              <>
+                {orders.map((order) => {
+                  return (
+                    <div style={{ marginBottom: 50 }}>
+                      {order.orderStatus.map((status, index) => {
+                        if (status.isCompleted) {
+                          return <div key={index}>{status.type}</div>;
+                        }
+                      })}
+                      {order.items.map((orderitem, index) => {
+                        return (
+                          <div key={index}>
+                            <div>
+                              {orderitem.price}&nbsp;
+                              <span>{orderitem.productId.name}</span>
+                            </div>
+                          </div>
+                        );
+                      })}
                     </div>
-                  </Link>
-                );
-              })} */}
-            </>
-          );
-        })}
+                  );
+                })}
+              </>
+            ) : (
+              "No Order found"
+            )}
+          </>
+        ) : (
+          "Login To see your orders"
+        )}
       </div>
     </div>
   );

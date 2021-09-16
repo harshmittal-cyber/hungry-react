@@ -20,7 +20,7 @@ const Products = (props) => {
 
   return (
     <div className={`${style.productStyle} shadow-lg`}>
-      <div className="overflow-hidden" data-label={`${product.name}`}>
+      <div className="overflow-hidden " data-label={`${product.name}`}>
         <div className={`${style.itemStyle}`}>
           <div className="width-100">
             <div className={`${style.product_image}`}>

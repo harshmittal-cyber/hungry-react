@@ -12,11 +12,7 @@ export const Sidebar = [
     path: "/enquiry",
   },
   {
-    title: "About",
-    path: "/",
-  },
-  {
-    title: "Contact",
-    path: "/",
+    title: "Orders",
+    path: "/user/orders",
   },
 ];

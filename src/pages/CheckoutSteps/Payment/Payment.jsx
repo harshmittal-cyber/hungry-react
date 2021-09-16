@@ -2,7 +2,6 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addorder } from "../../../helpers/http/index";
 import { resetCart } from "../../../store/cart";
-import { getOrders } from "../../../actions/order.action";
 import { setOrder } from "../../../store/order";
 
 const Payment = ({ onPrev }) => {

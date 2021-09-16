@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { setAuth } from "../../store/auth";
 import { useDispatch, useSelector } from "react-redux";
 import { logOut } from "../../helpers/http/index";
-import styles from "./Navbar.module.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { resetCart } from "../../store/cart";
+import { resetOrder } from "../../store/order";
 import { Sidebar } from "./Sidebar";
+import styles from "./Navbar.module.css";
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -14,17 +15,28 @@ const Navbar = () => {
   const { cartTotalItems } = useSelector((state) => state.cart);
   const [sidebar, setSidebar] = useState(false);
 
+  useEffect(() => {
+    function handleResize() {
+      if (window.innerWidth >= 830) {
+        setSidebar(false);
+      }
+    }
+    window.addEventListener("resize", handleResize);
+  }, []);
+
   //logout function
   async function logoutuser() {
     try {
       const { data } = await logOut();
       dispatch(resetCart());
       dispatch(setAuth(data));
+      dispatch(resetOrder());
     } catch (err) {
       console.log("error", err.message);
     }
   }
 
+  //sidebar
   const sidebartoggle = () => {
     setSidebar(!sidebar);
   };
@@ -33,11 +45,23 @@ const Navbar = () => {
     <div className={`${styles.navbar} shadow-lg`}>
       <div className={`${styles.header}`}>
         <div className={`${styles.header_container}`}>
-          <div className={`${styles.hamburger_container}`}>
-            {/* <img src="/images/hamburger.svg" alt="hamburger" /> */}
-            <div className={`${styles.stick} ${styles.stick1}`}></div>
-            <div className={`${styles.stick} ${styles.stick2}`}></div>
-            <div className={`${styles.stick} ${styles.stick3}`}></div>
+          <div
+            className={`${styles.hamburger_container}`}
+            onClick={sidebartoggle}
+          >
+            {sidebar ? (
+              <img
+                src="/images/close.svg"
+                alt="close"
+                style={{ width: 64, height: 64 }}
+              />
+            ) : (
+              <>
+                <div className={`${styles.stick} ${styles.stick1}`}></div>
+                <div className={`${styles.stick} ${styles.stick2}`}></div>
+                <div className={`${styles.stick} ${styles.stick3}`}></div>{" "}
+              </>
+            )}
           </div>
           <div className={`${styles.header_content} ${styles.middle_header}`}>
             <div className={`${styles.main_logo}`}>
@@ -124,9 +148,9 @@ const Navbar = () => {
           </div>
         </div>
         <div
-          className={`${styles.responsive_drawer} ${
-            sidebar ? styles.active : ""
-          }  ${styles.animated} ${styles.fadeIn}`}
+          className={`${styles.responsive_drawer} shadow-lg ${
+            !sidebar ? styles.active : styles.active_drawer
+          } `}
         >
           <div className={`${styles.responsive_drawer_content} text-gray-600`}>
             <div>

@@ -13,11 +13,14 @@ export const order = createSlice({
       state.orders = action.payload.orders;
     },
     setOrder: (state, action) => {
-      console.log("payload order", action.payload.order);
       state.order = action.payload.order;
+    },
+    resetOrder: (state, action) => {
+      state.orders = initialState.orders;
+      state.order = initialState.order;
     },
   },
 });
 
-export const { setOrders, setOrder } = order.actions;
+export const { setOrders, setOrder, resetOrder } = order.actions;
 export default order.reducer;
