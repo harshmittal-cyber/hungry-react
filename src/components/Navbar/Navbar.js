@@ -51,7 +51,7 @@ const Navbar = () => {
           >
             {sidebar ? (
               <img
-                src="/images/close.svg"
+                src="/images/close1.svg"
                 alt="close"
                 style={{ width: 64, height: 64 }}
               />

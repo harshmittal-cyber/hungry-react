@@ -186,7 +186,7 @@
   top: 0;
   left: 0;
   height: calc(100vh - 55px);
-  width: 45vw;
+  width: 50vw;
   background-color: #f1f6fa;
   transition: ease-in-out 0.4s;
   overflow-x: hidden;

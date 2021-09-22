@@ -8,6 +8,7 @@ import Login from "./pages/Login/Login";
 import Checkout from "./pages/Checkout/checkout";
 import Orders from "./pages/Order/Orders/orders";
 import Page404 from "./pages/Page404/Page404";
+import Orderdetails from "./pages/Order/orderdetail/Orderdetails";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useLoading } from "./hooks/loader";
@@ -24,7 +25,16 @@ function App() {
   }, [isAuth]);
 
   return loading ? (
-    <div className="absolute top-52 left-52">loading...</div>
+    <div
+      style={{
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        transform: "translate(0, -50%)",
+      }}
+    >
+      <img src="/images/hungrylogo.svg" alt="Hungry" />
+    </div>
   ) : (
     <Router>
       <div className="App">
@@ -37,6 +47,7 @@ function App() {
           <Route path="/login" component={Login} />
           <Route path="/checkout" component={Checkout} />
           <Route path="/user/orders" component={Orders} exact />
+          <Route path="/order_details" component={Orderdetails} />
           <Route component={Page404} />
         </Switch>
       </div>
