@@ -12,6 +12,7 @@ const StepOtp = ({ onPrev }) => {
   const [otp1, setotp] = useState(new Array(6).fill(""));
   const dispatch = useDispatch();
   const { phone, hash } = useSelector((state) => state.auth.otp);
+  const name = useSelector((state) => state.userdata.name);
   const [counter, setCounter] = useState(60);
   const [error, setError] = useState("");
   const history = useHistory();
@@ -26,7 +27,7 @@ const StepOtp = ({ onPrev }) => {
     try {
       let otp = parseInt(otp1.join(""));
       if (otp.toString().length === 6) {
-        const { data } = await verifyOtp({ otp, phone, hash });
+        const { data } = await verifyOtp({ otp, phone, hash, name });
         dispatch(setAuth(data));
         history.goBack();
       } else {

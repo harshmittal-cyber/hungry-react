@@ -5,7 +5,7 @@ import Input from "../../../components/Input/TextInput";
 import { setName } from "../../../store/userdata";
 import { useDispatch, useSelector } from "react-redux";
 
-const StepName = ({ onNext }) => {
+const StepName = ({ onNext, onPrev }) => {
   const name = useSelector((state) => state.userdata.name);
   const dispatch = useDispatch();
   const [fullname, setFullName] = useState(name);
@@ -15,7 +15,7 @@ const StepName = ({ onNext }) => {
       return;
     }
     await dispatch(setName(fullname));
-    onNext();
+    onPrev();
   }
 
   return (

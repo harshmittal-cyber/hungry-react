@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { setOtp } from "../../../store/auth";
 import style from "./StepPhone.module.css";
 
-const StepPhone = ({ onNext }) => {
+const StepPhone = ({ onNext, onDouble }) => {
   const [phone, setPhone] = useState("");
   const dispatch = useDispatch();
 
@@ -21,8 +21,13 @@ const StepPhone = ({ onNext }) => {
     //server request
     const { data } = await sendOtp({ phone });
     console.log(data);
-    dispatch(setOtp({ phone: data.phone, hash: data.hash }));
-    onNext();
+    if (data.user === null) {
+      dispatch(setOtp({ phone: data.phone, hash: data.hash }));
+      onDouble();
+    } else {
+      dispatch(setOtp({ phone: data.phone, hash: data.hash }));
+      onNext();
+    }
   }
 
   return (

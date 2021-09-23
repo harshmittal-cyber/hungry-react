@@ -60,7 +60,7 @@
 .order_item .order_item_cnt .order_hd {
   display: flex;
   -webkit-box-pack: start;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 .order_item .order_item_cnt .order_status {

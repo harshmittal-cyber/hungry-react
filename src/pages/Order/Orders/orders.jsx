@@ -29,10 +29,11 @@ const Orders = () => {
                         </div>
                       </div>
                       <div className={`${style.order_container}`}>
-                        {orders.map((order) => {
+                        {orders.map((order, index) => {
                           return (
                             <div
                               className={`${style.order_item} ${style.order_width}`}
+                              key={index}
                             >
                               <div
                                 className={`${style.order_item_cnt} shadow-lg`}
