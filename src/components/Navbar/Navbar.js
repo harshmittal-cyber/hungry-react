@@ -76,7 +76,7 @@ const Navbar = () => {
             <ul className={`${styles.menu_items} text-gray-700`}>
               {Sidebar.map((item, index) => {
                 return (
-                  <Link to={item.path}>
+                  <Link to={item.path} key={index}>
                     <li key={index} className={`${styles.menu_item}`}>
                       {item.title}
                     </li>

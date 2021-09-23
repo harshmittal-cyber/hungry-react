@@ -10,7 +10,6 @@ const Orderdetails = (props) => {
       orderId: props.location.search.split("=")[1],
     };
     getOrder(payload);
-    console.log(order);
   }, []);
 
   return (

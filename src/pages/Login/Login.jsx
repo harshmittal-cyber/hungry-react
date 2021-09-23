@@ -4,15 +4,18 @@ import { Redirect } from "react-router-dom";
 import { useSelector } from "react-redux";
 import StepPhone from "../AuthStep/StepPhone/StepPhone";
 import StepOtp from "../AuthStep/StepOtp/StepOtp";
+import StepName from "../AuthStep/StepName/StepName";
 
 const steps = {
   1: StepPhone,
   2: StepOtp,
+  3: StepName,
 };
 
 const Login = (props) => {
   const [step, setStep] = useState(1);
   const Step = steps[step];
+
   const { isAuth } = useSelector((state) => state.auth);
   const { from } = { from: { pathname: "/" } };
 
@@ -28,9 +31,13 @@ const Login = (props) => {
     setStep(step - 1);
   }
 
+  function onDoubleStep() {
+    setStep(step + 2);
+  }
+
   return (
     <div>
-      <Step onNext={onNext} onPrev={onPrev} />
+      <Step onNext={onNext} onPrev={onPrev} onDouble={onDoubleStep} />
     </div>
   );
 };
