@@ -52,12 +52,14 @@ const StepPhone = ({ onNext, onDouble }) => {
         </div>
       </div>
       {phone.length < 10 ? (
-        <input
-          type="submit"
-          value="SUBMIT"
-          disabled
-          className="disable_button"
-        />
+        <>
+          <input
+            type="submit"
+            value="SUBMIT"
+            disabled
+            className="disable_button"
+          />
+        </>
       ) : (
         <Button text="Submit" onClick={submit} />
       )}

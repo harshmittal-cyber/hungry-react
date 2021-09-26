@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Button from "../../../components/Button/Button";
 import Card from "../../../components/Card/Card";
-import Input from "../../../components/Input/TextInput";
 import { setName } from "../../../store/userdata";
 import { useDispatch, useSelector } from "react-redux";
+import style from "./StepName.module.css";
 
 const StepName = ({ onNext, onPrev }) => {
   const name = useSelector((state) => state.userdata.name);
@@ -20,11 +20,21 @@ const StepName = ({ onNext, onPrev }) => {
 
   return (
     <Card title="Enter Your Name ">
-      <Input
+      <div className={`${style.name_input}`}>
+        <div className={`${style.name}`}>
+          <input
+            value={fullname}
+            placeholder="Enter Your Name"
+            onChange={(e) => setFullName(e.target.value)}
+            className={`${style.input}`}
+          />
+        </div>
+      </div>
+      {/* <Input
         value={fullname}
         placeholder="Enter Name"
         onChange={(e) => setFullName(e.target.value)}
-      />
+      /> */}
 
       <Button text="Continue" onClick={Continue} />
     </Card>

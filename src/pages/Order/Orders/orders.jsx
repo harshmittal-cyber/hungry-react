@@ -15,95 +15,89 @@ const Orders = () => {
 
   return (
     <div>
-      <div>
-        {isAuth ? (
-          <>
-            {orders.length > 0 ? (
-              <>
-                <div>
-                  <div className={`${style.order}`}>
-                    <div className={`${style.order_cnt}`}>
-                      <div className={`${style.order_heading_cnt}`}>
-                        <div className={`${style.order_heading}`}>
-                          All Orders
-                        </div>
-                      </div>
-                      <div className={`${style.order_container}`}>
-                        {orders.map((order, index) => {
-                          return (
+      {isAuth ? (
+        <>
+          {orders.length > 0 ? (
+            <>
+              <div>
+                <div className={`${style.order}`}>
+                  <div className={`${style.order_cnt}`}>
+                    <div className={`${style.order_heading_cnt}`}>
+                      <div className={`${style.order_heading}`}>All Orders</div>
+                    </div>
+                    <div className={`${style.order_container}`}>
+                      {orders.map((order, index) => {
+                        return (
+                          <div
+                            className={`${style.order_item} ${style.order_width}`}
+                            key={index}
+                          >
                             <div
-                              className={`${style.order_item} ${style.order_width}`}
-                              key={index}
+                              className={`${style.order_item_cnt} shadow-lg`}
                             >
-                              <div
-                                className={`${style.order_item_cnt} shadow-lg`}
-                              >
-                                <div className={`${style.order_item_details}`}>
-                                  <div className={`${style.order_hd}`}>
-                                    <div className={`${style.order_status}`}>
-                                      {order.orderStatus.map(
-                                        (status, index) => {
-                                          if (status.isCompleted) {
-                                            return (
-                                              <div
-                                                key={index}
-                                                className={`${style.order_status_h}`}
-                                              >
-                                                {status.type}
-                                              </div>
-                                            );
-                                          }
-                                        }
-                                      )}
-                                    </div>
-                                    <span>
-                                      Ordered on{" "}
-                                      {moment(order.createdAt).format(
-                                        "MMM Do,h:mm A"
-                                      )}{" "}
-                                    </span>
+                              <div className={`${style.order_item_details}`}>
+                                <div className={`${style.order_hd}`}>
+                                  <div className={`${style.order_status}`}>
+                                    {order.orderStatus.map((status, index) => {
+                                      if (status.isCompleted) {
+                                        return (
+                                          <div
+                                            key={index}
+                                            className={`${style.order_status_h}`}
+                                          >
+                                            {status.type}
+                                          </div>
+                                        );
+                                      }
+                                    })}
                                   </div>
-
-                                  <div className={`${style.item_detail}`}>
-                                    <div className={`${style.item_qty}`}>
-                                      Order Id :
-                                    </div>
-                                    &nbsp;
-                                    <div className={`${style.item_desc}`}>
-                                      {order.order_id}
-                                    </div>
-                                  </div>
+                                  <span>
+                                    Ordered on{" "}
+                                    {moment(order.createdAt).format(
+                                      "MMM Do,h:mm A"
+                                    )}{" "}
+                                  </span>
                                 </div>
-                                <div className={`${style.order_view_details}`}>
-                                  <div
-                                    className={`${style.order_details_button}`}
-                                  >
-                                    <Link
-                                      to={`/order_details?order_id=${order.order_id}`}
-                                    >
-                                      <button className={`${style.order_btn}`}>
-                                        <span>view detail</span>
-                                      </button>
-                                    </Link>
+
+                                <div className={`${style.item_detail}`}>
+                                  <div className={`${style.item_qty}`}>
+                                    Order Id :
+                                  </div>
+                                  &nbsp;
+                                  <div className={`${style.item_desc}`}>
+                                    {order.order_id}
                                   </div>
                                 </div>
                               </div>
+                              <div className={`${style.order_view_details}`}>
+                                <div
+                                  className={`${style.order_details_button}`}
+                                >
+                                  <Link
+                                    to={`/order_details?order_id=${order.order_id}`}
+                                  >
+                                    <button className={`${style.order_btn}`}>
+                                      <span>view detail</span>
+                                    </button>
+                                  </Link>
+                                </div>
+                              </div>
                             </div>
-                          );
-                        })}
-                      </div>
+                          </div>
+                        );
+                      })}
                     </div>
                   </div>
                 </div>
-              </>
-            ) : (
-              "No Order found"
-            )}
-          </>
-        ) : (
-          "Login To see your orders"
-        )}
-      </div>
+              </div>
+            </>
+          ) : (
+            "No Order found"
+          )}
+        </>
+      ) : (
+        "Login To see your orders"
+      )}
     </div>
   );
 };

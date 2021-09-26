@@ -3,6 +3,7 @@ import Card from "../../../components/Card/Card";
 import { verifyOtp } from "../../../helpers/http/index";
 import { useSelector, useDispatch } from "react-redux";
 import { setAuth } from "../../../store/auth";
+import { setName } from "../../../store/userdata";
 import { useHistory } from "react-router-dom";
 import { sendOtp } from "../../../helpers/http/index";
 import { setOtp } from "../../../store/auth";
@@ -29,6 +30,7 @@ const StepOtp = ({ onPrev }) => {
       if (otp.toString().length === 6) {
         const { data } = await verifyOtp({ otp, phone, hash, name });
         dispatch(setAuth(data));
+        dispatch(setName(data.user.name));
         history.goBack();
       } else {
         setError("Please Enter 6 digits OTP");

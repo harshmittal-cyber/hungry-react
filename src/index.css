@@ -131,3 +131,63 @@ code {
 .self_center {
   align-self: center;
 }
+
+@media screen and (min-width: 280px) {
+  .disable_button {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 358px) {
+  .disable_button {
+    width: 96%;
+  }
+}
+
+@media screen and (min-width: 376px) {
+  .disable_button {
+    width: 94%;
+  }
+}
+
+@media screen and (min-width: 394px) {
+  .disable_button {
+    width: 91%;
+  }
+}
+
+@media screen and (min-width: 410px) {
+  .disable_button {
+    width: 86%;
+  }
+}
+
+@media screen and (min-width: 432px) {
+  .disable_button {
+    width: 82%;
+  }
+}
+
+@media screen and (min-width: 468px) {
+  .disable_button {
+    width: 78%;
+  }
+}
+
+@media screen and (min-width: 510px) {
+  .disable_button {
+    width: 74%;
+  }
+}
+
+@media screen and (min-width: 530px) {
+  .disable_button {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 548px) {
+  .disable_button {
+    width: 62%;
+  }
+}

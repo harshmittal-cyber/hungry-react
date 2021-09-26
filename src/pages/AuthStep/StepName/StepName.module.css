@@ -1,0 +1,100 @@
+.name_input {
+  display: flex;
+  font-size: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.name_input .name {
+  border: 1px solid rgb(161, 177, 185);
+  border-radius: 2px;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+.name {
+  display: flex;
+  position: relative;
+  -webkit-box-pack: end;
+}
+
+@media screen and (min-width: 280px) {
+  .name_input {
+    width: 100%;
+  }
+  .name_input .name {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 358px) {
+  .name_input {
+    width: 96%;
+  }
+  .name_input .name {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 376px) {
+  .name_input {
+    width: 94%;
+  }
+  .name_input .name {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 394px) {
+  .name_input {
+    width: 91%;
+  }
+  .name_input .name {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 410px) {
+  .name_input {
+    width: 86%;
+  }
+  .name_input .name {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 432px) {
+  .name_input {
+    width: 82%;
+  }
+  .name_input .name {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 468px) {
+  .name_input {
+    width: 78%;
+  }
+  .name_input .name {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 514px) {
+  .name_input {
+    width: 74%;
+  }
+  .name_input .name {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 548px) {
+  .name_input {
+    width: 62%;
+  }
+  .name_input .name {
+    width: 100%;
+  }
+}

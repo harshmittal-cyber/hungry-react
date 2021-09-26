@@ -3,14 +3,17 @@ import { Link } from "react-router-dom";
 import { setAuth } from "../../store/auth";
 import { useDispatch, useSelector } from "react-redux";
 import { logOut } from "../../helpers/http/index";
+import { useHistory } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { resetCart } from "../../store/cart";
 import { resetOrder } from "../../store/order";
+import { resetData } from "../../store/userdata";
 import { Sidebar } from "./Sidebar";
 import styles from "./Navbar.module.css";
 
 const Navbar = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
   const { isAuth, user } = useSelector((state) => state.auth);
   const { cartTotalItems } = useSelector((state) => state.cart);
   const [sidebar, setSidebar] = useState(false);
@@ -31,6 +34,9 @@ const Navbar = () => {
       dispatch(resetCart());
       dispatch(setAuth(data));
       dispatch(resetOrder());
+      dispatch(resetData());
+      let newpath = "/menu";
+      history.push(newpath);
     } catch (err) {
       console.log("error", err.message);
     }
@@ -121,7 +127,7 @@ const Navbar = () => {
                 <div className={`${styles.relative_container}`}>
                   <div className={`${styles.profile_dropdown} text-gray-600`}>
                     <div className={`${styles.user_name} text-gray-700`}>
-                      {user.name ? user.name : user.phone}
+                      {user.name}
                     </div>
                     <div className={`${styles.logoutbtn}`}>
                       <div

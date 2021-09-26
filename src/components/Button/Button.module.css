@@ -15,8 +15,62 @@
   letter-spacing: 0.1em;
 }
 
-@media screen and (max-width: 552px) {
+@media screen and (min-width: 280px) {
   .button {
-    width: 80%;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 358px) {
+  .button {
+    width: 96%;
+  }
+}
+
+@media screen and (min-width: 376px) {
+  .button {
+    width: 94%;
+  }
+}
+
+@media screen and (min-width: 394px) {
+  .button {
+    width: 91%;
+  }
+}
+
+@media screen and (min-width: 410px) {
+  .button {
+    width: 86%;
+  }
+}
+
+@media screen and (min-width: 432px) {
+  .button {
+    width: 82%;
+  }
+}
+
+@media screen and (min-width: 468px) {
+  .button {
+    width: 78%;
+  }
+}
+
+@media screen and (min-width: 510px) {
+  .button {
+    width: 74%;
+  }
+}
+
+@media screen and (min-width: 530px) {
+  .button {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 548px) {
+  .button {
+    width: 62%;
   }
 }
