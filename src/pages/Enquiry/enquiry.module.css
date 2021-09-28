@@ -242,3 +242,12 @@ form {
     max-width: unset;
   }
 }
+
+@media (max-width: 548px) {
+  .section_text_bold {
+    font-size: 16px;
+  }
+  .section_text2 {
+    font-size: 15px;
+  }
+}

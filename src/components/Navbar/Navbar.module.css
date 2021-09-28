@@ -79,6 +79,14 @@
   position: relative;
 }
 
+.activeClass {
+  border-image-slice: 1;
+  border-image-source: linear-gradient(90deg, #ff5567, #fc283f);
+  transition: none;
+  border-style: solid;
+  border-width: 0 0 4px;
+}
+
 /* login section */
 .login_button {
   padding: 8px 24px;
@@ -121,6 +129,11 @@
   position: relative;
   /* top: 15px; */
   /* righ */
+}
+
+.cartimage {
+  height: 28px;
+  width: 28px;
 }
 
 .profile_image {
@@ -245,5 +258,9 @@
   }
   .login_text {
     font-size: 0.5rem;
+  }
+  .cartimage {
+    height: 25px;
+    width: 25px;
   }
 }

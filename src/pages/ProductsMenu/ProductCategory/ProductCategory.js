@@ -6,7 +6,7 @@ const ProductCategory = (props) => {
   const { category } = props;
 
   return (
-    <div className={`${style.product_category}`}>
+    <div className={`${style.product_category}`} data-label={category.name}>
       <div className="ref">
         <div className={`${style.hrStyle}`}></div>
         <div className={`${style.categoryStyle} shadow-sm`}>
