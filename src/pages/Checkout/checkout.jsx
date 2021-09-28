@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
-
 import Address from "../CheckoutSteps/Address/Address";
 import Payment from "../CheckoutSteps/Payment/Payment";
 
