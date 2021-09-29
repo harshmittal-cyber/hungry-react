@@ -11,8 +11,11 @@ export const Address = createSlice({
     setAddress: (state, action) => {
       state.useraddress = action.payload.address;
     },
+    resetAddress: (state, action) => {
+      state.useraddress = initialState.useraddress;
+    },
   },
 });
 
-export const { setAddress } = Address.actions;
+export const { setAddress, resetAddress } = Address.actions;
 export default Address.reducer;

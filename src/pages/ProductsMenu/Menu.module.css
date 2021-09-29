@@ -1,0 +1,16 @@
+.menunav {
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  padding: 0.3rem 3rem 0rem;
+  flex-flow: row nowrap;
+  right: 0px;
+  left: 0px;
+  width: auto;
+  background-color: rgb(235, 235, 235);
+  overflow-x: auto;
+  height: 2.4em;
+  position: fixed;
+  z-index: 90;
+  margin-top: -3em;
+}

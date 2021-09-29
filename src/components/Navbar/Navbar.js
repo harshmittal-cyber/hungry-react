@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { setAuth } from "../../store/auth";
+import { Link, useHistory, NavLink } from "react-router-dom";
+import { setAuth, setOtp } from "../../store/auth";
 import { useDispatch, useSelector } from "react-redux";
 import { logOut } from "../../helpers/http/index";
-import { useHistory } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { resetCart } from "../../store/cart";
 import { resetOrder } from "../../store/order";
 import { resetData } from "../../store/userdata";
+import { resetAddress } from "../../store/address";
 import { Sidebar } from "./Sidebar";
 import styles from "./Navbar.module.css";
 
@@ -33,8 +33,10 @@ const Navbar = () => {
       const { data } = await logOut();
       dispatch(resetCart());
       dispatch(setAuth(data));
+      dispatch(setOtp(data));
       dispatch(resetOrder());
       dispatch(resetData());
+      dispatch(resetAddress());
       let newpath = "/menu";
       history.push(newpath);
     } catch (err) {
@@ -82,11 +84,17 @@ const Navbar = () => {
             <ul className={`${styles.menu_items} text-gray-700`}>
               {Sidebar.map((item, index) => {
                 return (
-                  <Link to={item.path} key={index}>
+                  <NavLink
+                    to={item.path}
+                    key={index}
+                    exact
+                    activeStyle={{ color: "#fc283f" }}
+                    activeClassName={styles.activeClass}
+                  >
                     <li key={index} className={`${styles.menu_item}`}>
                       {item.title}
                     </li>
-                  </Link>
+                  </NavLink>
                 );
               })}
             </ul>
@@ -99,7 +107,7 @@ const Navbar = () => {
                     <LazyLoadImage
                       src="/images/cart.svg"
                       alt="cart"
-                      style={{ height: 28, width: 28 }}
+                      className={`${styles.cartimage}`}
                     />
 
                     <span
@@ -162,7 +170,11 @@ const Navbar = () => {
             <div>
               {Sidebar.map((item, index) => {
                 return (
-                  <Link to={item.path}>
+                  <NavLink
+                    to={item.path}
+                    exact
+                    activeStyle={{ color: "#fc283f" }}
+                  >
                     <div
                       key={index}
                       className={`${styles.tab_title}`}
@@ -170,7 +182,7 @@ const Navbar = () => {
                     >
                       {item.title}
                     </div>
-                  </Link>
+                  </NavLink>
                 );
               })}
             </div>
