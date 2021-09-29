@@ -21,8 +21,6 @@ const StepName = ({ onNext }) => {
   async function Continue() {
     try {
       if (email) {
-        // const { data } = await activate({ name, email });
-
         if (data.auth) {
           dispatch(setAuth(data));
         }
@@ -32,13 +30,22 @@ const StepName = ({ onNext }) => {
     }
   }
   return (
-    <Card title="Enter your  Email ">
-      <Input
-        value={useremail}
-        placeholder="Enter Email"
-        onChange={(e) => setUserEmail(e.target.value)}
-      />
-      <button onClick={submit}>Verify</button>
+    <Card title="Enter Your Email ">
+      <div className={`${style.name_input}`}>
+        <div className={`${style.name}`}>
+          <input
+            placeholder="Enter Your Email"
+            onChange={(e) => setUserEmail(e.target.value)}
+            className={`${style.input}`}
+          />
+        </div>
+      </div>
+      {/* <Input
+        value={fullname}
+        placeholder="Enter Name"
+        onChange={(e) => setFullName(e.target.value)}
+      /> */}
+
       <Button text="Continue" onClick={Continue} />
     </Card>
   );

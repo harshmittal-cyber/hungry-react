@@ -29,7 +29,7 @@ function App() {
       style={{
         position: "absolute",
         top: "50%",
-        left: "50%",
+        left: "45%",
         transform: "translate(0, -50%)",
       }}
     >
