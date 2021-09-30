@@ -4,7 +4,6 @@ import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
-import style from "./Address.module.css";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import { useDispatch, useSelector } from "react-redux";
@@ -12,7 +11,7 @@ import { createaddress } from "../../../helpers/http/index";
 import { setAddress } from "../../../store/address";
 import { getAddress } from "../../../actions/address.action";
 
-const Address = ({ handleNext }, props) => {
+const Address = ({ handleNext }) => {
   const dispatch = useDispatch();
   const { useraddress } = useSelector((state) => state.Address);
   const addressarray = {
@@ -94,6 +93,7 @@ const Address = ({ handleNext }, props) => {
             }
           />
         </Grid>
+
         <Grid item xs={12} sm={6}>
           <TextField
             required

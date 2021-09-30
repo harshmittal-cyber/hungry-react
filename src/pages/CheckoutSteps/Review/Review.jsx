@@ -42,7 +42,7 @@ export default function Review({ handleBack, confirmorder, handleNext }) {
         ))}
 
         <ListItem sx={{ py: 1, px: 0 }}>
-          <ListItemText primary="Total" />
+          <ListItemText primary="Total Price" />
           <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
             {getCartTotal()}
           </Typography>
