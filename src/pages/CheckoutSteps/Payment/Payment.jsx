@@ -148,6 +148,7 @@ const Payment = ({ handleBack, handleNext }) => {
           Payment Options
         </Typography>
         <FormControl component="fieldset" error={error}>
+          <FormHelperText>{error}</FormHelperText>
           <RadioGroup
             aria-label="Payment Options"
             name="controlled-radio-buttons-group"
@@ -167,7 +168,6 @@ const Payment = ({ handleBack, handleNext }) => {
               label="Card"
             />
           </RadioGroup>
-          <FormHelperText>{error}</FormHelperText>
         </FormControl>
       </React.Fragment>
       <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
