@@ -6,11 +6,6 @@ import Payment from "../CheckoutSteps/Payment/Payment";
 import CssBaseline from "@mui/material/CssBaseline";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
-// import Toolbar from "@mui/material/Toolbar";
-import { addorder } from "../../helpers/http/index";
-import { resetCart } from "../../store/cart";
-import { setOrder } from "../../store/order";
-import { getOrders } from "../../actions/order.action";
 import Paper from "@mui/material/Paper";
 import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
@@ -34,22 +29,16 @@ function Copyright() {
   );
 }
 
-const steps = ["Shipping address", "Payment details", "Review your order"];
+const steps = ["Shipping address", "Order Summary", "Payment details"];
 
-function getStepContent(step, handleNext, handleBack, confirmorder) {
+function getStepContent(step, handleNext, handleBack) {
   switch (step) {
     case 0:
       return <Address handleNext={handleNext} />;
     case 1:
-      return <Payment handleNext={handleNext} handleBack={handleBack} />;
+      return <Review handleBack={handleBack} handleNext={handleNext} />;
     case 2:
-      return (
-        <Review
-          handleBack={handleBack}
-          confirmorder={confirmorder}
-          handleNext={handleNext}
-        />
-      );
+      return <Payment handleNext={handleNext} handleBack={handleBack} />;
 
     default:
       throw new Error("Unknown step");
@@ -58,13 +47,10 @@ function getStepContent(step, handleNext, handleBack, confirmorder) {
 
 const theme = createTheme();
 
-export default function Checkout(props) {
+export default function Checkout() {
   const [activeStep, setActiveStep] = React.useState(0);
   const { isAuth } = useSelector((state) => state.auth);
-  const cart = useSelector((state) => state.cart);
-  const { useraddress } = useSelector((state) => state.Address);
   const { order } = useSelector((state) => state.order);
-  const dispatch = useDispatch();
 
   const handleNext = () => {
     setActiveStep(activeStep + 1);
@@ -72,44 +58,6 @@ export default function Checkout(props) {
 
   const handleBack = () => {
     setActiveStep(activeStep - 1);
-  };
-
-  const confirmorder = async () => {
-    try {
-      const items = Object.keys(cart.CartItems).map((key) => ({
-        productId: key,
-        price: cart.CartItems[key].price,
-        quantity: cart.CartItems[key].quantity,
-      }));
-
-      const totalAmount = Object.keys(cart.CartItems).reduce(
-        (totalprice, key) => {
-          const { price, quantity } = cart.CartItems[key];
-          return totalprice + price * quantity;
-        },
-        0
-      );
-
-      const payload = {
-        address: useraddress.id,
-        items,
-        totalAmount,
-        paymentStatus: "pending",
-        paymentType: "cod",
-      };
-
-      const res = await addorder(payload);
-      if (res.status === 201) {
-        const { order } = res.data;
-        handleNext();
-        dispatch(setOrder({ order }));
-        dispatch(resetCart());
-        getOrders();
-        handleNext();
-      }
-    } catch (err) {
-      console.log(err);
-    }
   };
 
   const { from } = { from: { pathname: "/cart" } };
@@ -160,28 +108,7 @@ export default function Checkout(props) {
               </React.Fragment>
             ) : (
               <React.Fragment>
-                {getStepContent(
-                  activeStep,
-                  handleNext,
-                  handleBack,
-                  confirmorder
-                )}
-                {/* <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
-                  {activeStep !== 0 && (
-                    <Button onClick={handleBack} sx={{ mt: 3, ml: 1 }}>
-                      Back
-                    </Button>
-                  )}
-
-                  <Button
-                    variant="contained"
-                    onClick={handleNext}
-                    sx={{ mt: 3, ml: 1 }}
-                    className="root_button"
-                  >
-                    {activeStep === steps.length - 1 ? "Place order" : "Next"}
-                  </Button>
-                </Box> */}
+                {getStepContent(activeStep, handleNext, handleBack)}
               </React.Fragment>
             )}
           </React.Fragment>
@@ -191,30 +118,3 @@ export default function Checkout(props) {
     </ThemeProvider>
   );
 }
-// const steps = {
-//   1: Address,
-//   2: Payment,
-// };
-
-// const Checkout = (props) => {
-//   const [step, setStep] = useState(1);
-//   const Step = steps[step];
-//   const { isAuth } = useSelector((state) => state.auth);
-//   const { cartTotalItems } = useSelector((state) => state.cart);
-
-//   function onNext() {
-//     setStep(step + 1);
-//   }
-
-//   function onPrev() {
-//     setStep(step - 1);
-//   }
-
-//   return (
-//     <div>
-//       <Step onNext={onNext} onPrev={onPrev} />
-//     </div>
-//   );
-// };
-
-// export default Checkout;

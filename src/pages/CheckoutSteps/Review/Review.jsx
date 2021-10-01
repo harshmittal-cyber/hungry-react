@@ -8,7 +8,7 @@ import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 
-export default function Review({ handleBack, confirmorder, handleNext }) {
+export default function Review({ handleBack, handleNext }) {
   const cart = useSelector((state) => state.cart);
   const { useraddress } = useSelector((state) => state.Address);
   const { isAuth } = useSelector((state) => state.auth);
@@ -50,22 +50,14 @@ export default function Review({ handleBack, confirmorder, handleNext }) {
       </List>
       <Grid container spacing={2}>
         <Grid item xs={12} sm={6}>
-          <Typography variant="h6" gutterBottom sx={{ mt: 2 }}>
-            Shipping
+          <Typography variant="h5" gutterBottom sx={{ mt: 2 }}>
+            Shipping Address
           </Typography>
           <Typography gutterBottom>
             {useraddress.firstname} {useraddress.lastname}
           </Typography>
           <Typography gutterBottom>
             {useraddress.city},{useraddress.state}
-          </Typography>
-        </Grid>
-        <Grid item container direction="column" xs={12} sm={6}>
-          <Typography variant="h6" gutterBottom sx={{ mt: 2 }}>
-            Payment details
-          </Typography>
-          <Typography gutterBottom sx={{ mt: 2 }}>
-            Cash On Delivery
           </Typography>
         </Grid>
       </Grid>
@@ -75,12 +67,12 @@ export default function Review({ handleBack, confirmorder, handleNext }) {
         </Button>
 
         <Button
-          onClick={confirmorder}
+          onClick={handleNext}
           variant="contained"
           sx={{ mt: 3, ml: 1 }}
           className="root_button"
         >
-          Place Order
+          Next
         </Button>
       </Box>
     </React.Fragment>
