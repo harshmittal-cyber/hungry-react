@@ -49,7 +49,7 @@ const CartItem = (props) => {
                     <div
                       className={`${style.delete}`}
                       data-label={`${props.cartitem._id}`}
-                      onClick={() => onDeleteProduct(props.cartitem._id)}
+                      onClick={() => onDeleteProduct(props.cartitem)}
                     ></div>
                   ) : (
                     <div
