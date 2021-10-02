@@ -16,15 +16,6 @@ const Cart = () => {
     setCartItems(cart.CartItems);
   }, [cart.CartItems, isAuth]);
 
-  // cart total price
-  const getCartTotal = () => {
-    let total = 0;
-    Object.keys(cartItems).map((key) => {
-      total += cartItems[key].price * cartItems[key].quantity;
-    });
-    return total;
-  };
-
   // increasing the quantity
   const handleIncreaseQuantity = (cartproduct) => {
     addToCart(cartproduct, 1);
@@ -39,11 +30,12 @@ const Cart = () => {
   };
 
   // deleteing the product from cart
-  const handleDeleteProduct = async (id) => {
+  const handleDeleteProduct = async (item) => {
     try {
       const payload = {
         data: {
-          productId: id,
+          productId: item._id,
+          productprice: item.price,
         },
       };
 
@@ -120,7 +112,7 @@ const Cart = () => {
                               Price({cart.cartTotalItems} item)
                             </div>
                           </div>
-                          <span>{getCartTotal()}</span>
+                          <span>{cart.cartTotal}</span>
                         </div>
                         <div className={`${styles.price_section}`}>
                           <div className={`${styles.details}`}>
@@ -150,7 +142,7 @@ const Cart = () => {
                                     <div className={`item-center`}></div>
                                   </div>
                                   <span className={`rupee`}>
-                                    {getCartTotal()}
+                                    {cart.cartTotal}
                                   </span>
                                 </div>
                               </div>

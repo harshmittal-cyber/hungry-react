@@ -10,9 +10,10 @@ export const getcartItems = async () => {
       const res = await getcart();
       if (res.status === 200) {
         const { cartItems } = res.data;
+        const { cartTotal } = res.data.cart;
         const cartTotalItems = Object.keys(res.data.cartItems).length;
         if (cartItems) {
-          dispatch(setCart({ cartItems, cartTotalItems }));
+          dispatch(setCart({ cartItems, cartTotalItems, cartTotal }));
         }
       }
     } else {
@@ -32,11 +33,9 @@ export async function addToCart(cartproduct, newqty = 1) {
   if (!cartItem) {
     cartItem = {};
   }
-
   const quantity = cartItem[cartproduct._id]
     ? parseInt(cartItem[cartproduct._id].quantity + newqty)
     : 1;
-
   if (auth.isAuth) {
     try {
       const payload = {
@@ -44,8 +43,11 @@ export async function addToCart(cartproduct, newqty = 1) {
           {
             productId: cartproduct._id,
             quantity: quantity,
+            price: cartproduct.price,
           },
         ],
+        newqty,
+        cartTotal: cartproduct.price * quantity,
       };
 
       const res = await addtocart(payload);
