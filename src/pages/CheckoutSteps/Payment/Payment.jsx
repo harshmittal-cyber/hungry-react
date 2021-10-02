@@ -18,6 +18,7 @@ const Payment = ({ handleBack, handleNext }) => {
   const [value, setValue] = React.useState("");
   const [error, setError] = React.useState("");
   const cart = useSelector((state) => state.cart);
+  const [failure, setFailure] = React.useState("");
   const [cartItems, setCartItems] = React.useState(cart.CartItems);
   const { user, isAuth } = useSelector((state) => state.auth);
   const { useraddress } = useSelector((state) => state.Address);
@@ -79,6 +80,7 @@ const Payment = ({ handleBack, handleNext }) => {
     event.preventDefault();
     setValue(event.target.value);
     setError("");
+    setFailure("");
   };
 
   const handlePayment = async () => {
@@ -97,7 +99,7 @@ const Payment = ({ handleBack, handleNext }) => {
       amount: amount.toString(),
       order_id: order_id,
       name: "HUNGRY",
-      image: `http://localhost:2000/images/hungrylogo.svg`,
+      image: `http://localhost:2000/images/favicon.svg`,
       description: "Payment Receipt",
       handler: async function (response) {
         const data = {
@@ -114,6 +116,7 @@ const Payment = ({ handleBack, handleNext }) => {
           .then((res) => {
             console.log("res", res);
             if (res.data.signatureIsValid) {
+              setFailure("");
               confirmcardorder();
             }
           });
@@ -126,13 +129,7 @@ const Payment = ({ handleBack, handleNext }) => {
     };
     const paymentObject = new window.Razorpay(options);
     paymentObject.on("payment.failed", function (response) {
-      alert(response.error.code);
-      alert(response.error.description);
-      alert(response.error.source);
-      alert(response.error.step);
-      alert(response.error.reason);
-      alert(response.error.metadata.order_id);
-      alert(response.error.metadata.payment_id);
+      setFailure(response.error.description);
     });
     paymentObject.open();
   };
@@ -147,8 +144,7 @@ const Payment = ({ handleBack, handleNext }) => {
         <Typography variant="h6" gutterBottom>
           Payment Options
         </Typography>
-        <FormControl component="fieldset" error={error}>
-          <FormHelperText>{error}</FormHelperText>
+        <FormControl component="fieldset" error={error} failure={failure}>
           <RadioGroup
             aria-label="Payment Options"
             name="controlled-radio-buttons-group"
@@ -168,6 +164,10 @@ const Payment = ({ handleBack, handleNext }) => {
               label="Card"
             />
           </RadioGroup>
+          <FormHelperText style={{ color: "#f2222c" }}>{error}</FormHelperText>
+          <FormHelperText style={{ color: "#f2222c" }}>
+            {failure}
+          </FormHelperText>
         </FormControl>
       </React.Fragment>
       <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
