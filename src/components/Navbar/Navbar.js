@@ -16,16 +16,18 @@ const Navbar = () => {
   const history = useHistory();
   const { isAuth, user } = useSelector((state) => state.auth);
   const { cartTotalItems } = useSelector((state) => state.cart);
+  const [cartItems, setCartItems] = useState(cartTotalItems);
   const [sidebar, setSidebar] = useState(false);
 
   useEffect(() => {
+    setCartItems(cartTotalItems);
     function handleResize() {
       if (window.innerWidth >= 830) {
         setSidebar(false);
       }
     }
     window.addEventListener("resize", handleResize);
-  }, []);
+  }, [cartTotalItems]);
 
   //logout function
   async function logoutuser() {
@@ -109,14 +111,22 @@ const Navbar = () => {
                       alt="cart"
                       className={`${styles.cartimage}`}
                     />
-
-                    <span
-                      className={`absolute left-4 top-1 root_button text-white text-xs rounded py-0.2 ${
-                        cartTotalItems < 10 ? "px-2" : "px-1.5"
-                      } mt-2 `}
-                    >
-                      {!cartTotalItems ? 0 : cartTotalItems}
-                    </span>
+                    {cartItems > 0 ? (
+                      <span
+                        className={`absolute left-4 top-1 root_button text-white text-xs  py-0.2 ${
+                          cartTotalItems < 10 ? "px-2" : "px-1.5"
+                        } mt-2 `}
+                        style={{
+                          borderRadius: "7px",
+                          border: "1px solid #fff",
+                        }}
+                      >
+                        {/* {!cartTotalItems ? 0 : cartTotalItems} */}
+                        {cartItems}
+                      </span>
+                    ) : (
+                      ""
+                    )}
                   </>
                 ) : (
                   ""

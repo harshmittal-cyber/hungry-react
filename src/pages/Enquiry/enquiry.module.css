@@ -250,4 +250,7 @@ form {
   .section_text2 {
     font-size: 15px;
   }
+  .section_img {
+    width: 95%;
+  }
 }

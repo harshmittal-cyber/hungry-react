@@ -24,7 +24,10 @@ code {
 *:focus {
   outline: none;
 }
-
+*,
+body {
+  font-family: Mulish, Helvetica, Arial, sans-serif;
+}
 /* rupee symbol */
 .rupee::before {
   content: "\20b9";

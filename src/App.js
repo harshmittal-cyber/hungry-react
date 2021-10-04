@@ -3,6 +3,7 @@ import Home from "./pages/Home/Home";
 import Menu from "./pages/ProductsMenu/Menu";
 import Enquiry from "./pages/Enquiry/Enquiry";
 import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
 import Cart from "./pages/Cart/Cart";
 import Login from "./pages/Login/Login";
 import Checkout from "./pages/Checkout/checkout";
@@ -50,6 +51,7 @@ function App() {
           <Route path="/order_details" component={Orderdetails} />
           <Route component={Page404} />
         </Switch>
+        {/* <Footer /> */}
       </div>
     </Router>
   );

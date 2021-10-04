@@ -1,5 +1,5 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { Redirect, Link as RedirectLink } from "react-router-dom";
 import Address from "../CheckoutSteps/Address/Address";
 import Payment from "../CheckoutSteps/Payment/Payment";

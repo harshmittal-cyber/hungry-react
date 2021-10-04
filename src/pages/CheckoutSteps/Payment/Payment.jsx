@@ -19,15 +19,9 @@ const Payment = ({ handleBack, handleNext }) => {
   const [error, setError] = React.useState("");
   const cart = useSelector((state) => state.cart);
   const [failure, setFailure] = React.useState("");
-  const [cartItems, setCartItems] = React.useState(cart.CartItems);
-  const { user, isAuth } = useSelector((state) => state.auth);
+  const { user } = useSelector((state) => state.auth);
   const { useraddress } = useSelector((state) => state.Address);
   const dispatch = useDispatch();
-
-  React.useEffect(() => {
-    setCartItems(cart.CartItems);
-    console.log(value);
-  }, [cart.CartItems, value]);
 
   const confirmcardorder = async () => {
     try {
@@ -36,30 +30,24 @@ const Payment = ({ handleBack, handleNext }) => {
         price: cart.CartItems[key].price,
         quantity: cart.CartItems[key].quantity,
       }));
+      const totalAmount = cart.cartTotal;
 
-      const totalAmount = Object.keys(cart.CartItems).reduce(
-        (totalprice, key) => {
-          const { price, quantity } = cart.CartItems[key];
-          return totalprice + price * quantity;
-        },
-        0
-      );
       let payload;
       if (value === "card") {
         payload = {
           address: useraddress.id,
           items,
           totalAmount,
-          paymentStatus: "completed",
-          paymentType: "card",
+          paymentStatus: "Paid",
+          paymentType: value,
         };
       } else {
         payload = {
           address: useraddress.id,
           items,
           totalAmount,
-          paymentStatus: "pending",
-          paymentType: "cod",
+          paymentStatus: "Pending",
+          paymentType: value,
         };
       }
 
@@ -83,7 +71,28 @@ const Payment = ({ handleBack, handleNext }) => {
     setFailure("");
   };
 
+  function loadScript(src) {
+    return new Promise((resolve) => {
+      const script = document.createElement("script");
+      script.src = src;
+      script.onload = () => {
+        resolve(true);
+      };
+      script.onerror = () => {
+        resolve(false);
+      };
+      document.body.appendChild(script);
+    });
+  }
+
   const handlePayment = async () => {
+    const res = await loadScript(
+      "https://checkout.razorpay.com/v1/checkout.js"
+    );
+
+    if (!res) {
+      return;
+    }
     const userid = { userId: user.id };
     const { data } = await axios.post(
       `${process.env.REACT_APP_API_URL}/orders`,
