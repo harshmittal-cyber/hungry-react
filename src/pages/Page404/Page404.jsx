@@ -66,6 +66,7 @@ const Page404 = () => {
             href="https://twitter.com/harsh_mittal18"
             className="text-sm font-medium text-gray-500 hover:text-gray-600"
             target="_blank"
+            rel="noreferrer"
           >
             Twitter
           </a>
