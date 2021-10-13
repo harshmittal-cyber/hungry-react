@@ -51,7 +51,7 @@ export default function Orderdetails(props) {
                     <span className="font-thin">Order</span> #{order.order_id}
                   </div>
                   <a
-                    href="#"
+                    href="https://www.facebook.com"
                     className="hidden text-sm font-medium text-indigo-600 hover:text-indigo-500 sm:block"
                   >
                     View invoice<span aria-hidden="true"> &rarr;</span>
@@ -67,7 +67,7 @@ export default function Orderdetails(props) {
                   </time>
                 </p>
                 <a
-                  href="#"
+                  href="https://www.facebook.com"
                   className="text-sm font-medium text-indigo-600 hover:text-indigo-500 sm:hidden"
                 >
                   View invoice<span aria-hidden="true"> &rarr;</span>
@@ -92,19 +92,54 @@ export default function Orderdetails(props) {
                     </>
                   ) : (
                     <>
-                      {" "}
-                      {order.orderStatus[0].type} on{" "}
-                      <time
-                        dateTime={moment(order.orderStatus[0].date).format(
-                          "MMM Do"
-                        )}
-                      >
-                        {moment(order.orderStatus[0].date).format(
-                          "MMM Do,YYYY"
-                        )}
-                      </time>
+                      {order.orderStatus[2].isCompleted ? (
+                        <>
+                          {" "}
+                          {order.orderStatus[2].type} on{" "}
+                          <time
+                            dateTime={moment(order.orderStatus[2].date).format(
+                              "MMM Do"
+                            )}
+                          >
+                            {moment(order.orderStatus[2].date).format(
+                              "MMM Do,YYYY"
+                            )}
+                          </time>
+                        </>
+                      ) : (
+                        <>
+                          {order.orderStatus[1].isCompleted ? (
+                            <>
+                              {order.orderStatus[1].type} on{" "}
+                              <time
+                                dateTime={moment(
+                                  order.orderStatus[1].date
+                                ).format("MMM Do")}
+                              >
+                                {moment(order.orderStatus[1].date).format(
+                                  "MMM Do,YYYY"
+                                )}
+                              </time>
+                            </>
+                          ) : (
+                            <>
+                              {" "}
+                              {order.orderStatus[0].type} on{" "}
+                              <time
+                                dateTime={moment(
+                                  order.orderStatus[0].date
+                                ).format("MMM Do")}
+                              >
+                                {moment(order.orderStatus[0].date).format(
+                                  "MMM Do,YYYY"
+                                )}
+                              </time>
+                            </>
+                          )}
+                        </>
+                      )}
                     </>
-                  )}{" "}
+                  )}
                 </p>
                 <div className="mt-6" aria-hidden="true">
                   <div className="bg-gray-200 rounded-full ">

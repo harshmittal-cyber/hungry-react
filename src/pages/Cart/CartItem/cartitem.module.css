@@ -54,8 +54,8 @@
 .cartitemclass {
   display: block;
   height: auto;
-  max-height: 500px;
-  overflow-y: scroll;
+  max-height: auto;
+  overflow-y: hidden;
 }
 .itemclass {
   border-top: 1px solid #f0f0f0 !important;
@@ -74,6 +74,8 @@
 .item_image {
   position: relative;
   margin: 0 auto;
+  width: 112px;
+  height: 112px;
 }
 
 .item_img {
@@ -106,20 +108,12 @@
   display: block;
 }
 
-.item_option {
-  padding: 0.5rem 0px 0.625rem;
-  font-weight: 600;
-  font-size: 0.9rem;
-  color: rgb(100, 129, 143);
-  margin-bottom: 0.2rem;
-}
-
 .cartitemclass .item_price {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   float: right;
-  margin-top: -6rem;
+  margin-top: -5rem;
   margin-right: 1.2rem;
 }
 
@@ -193,15 +187,39 @@
   background-repeat: no-repeat;
 }
 
+.place_order_button {
+  position: sticky;
+  z-index: 2;
+  align-self: flex-start;
+  top: 64px;
+  bottom: 0;
+  display: block;
+}
+.place_order {
+  background: #fff;
+  padding: 16px 22px;
+  border-top: 1px solid #f0f0f0;
+  box-shadow: 0 -2px 10px 0 rgb(0 0 0 / 10%);
+  text-align: right;
+}
+.order_button {
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 20%);
+  border: none;
+  color: #fff;
+  padding: 10px 54px;
+  font-size: 18px;
+}
 /* cart right order total section */
 .cart_right_section {
   display: flex;
   flex-flow: column;
-  position: sticky;
-  top: 64px;
-  bottom: 0;
-  z-index: 2;
+  /* position: sticky; */
+  margin-top: 1px;
+  /* bottom: 0; */
+  width: 33.33%;
+  z-index: 1;
   align-self: flex-start;
+  padding: 0px 0px 0px 16px;
 }
 
 .cart_right {
@@ -276,4 +294,154 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+}
+
+@media screen and (max-width: 968px) {
+  .cartItembox {
+    flex-flow: column;
+  }
+  .cart_right_section {
+    position: relative;
+    margin-top: 30px;
+    width: 100%;
+    padding: 0;
+  }
+  .cartitemclass .item_price {
+    margin-top: -5.5rem;
+  }
+}
+
+@media screen and (max-width: 668px) {
+  .cartitem_right {
+    padding: 0.2rem;
+  }
+
+  .item_name {
+    font-size: 1rem;
+  }
+  .item_description {
+    width: 60%;
+  }
+  .cartitemclass .item_price {
+    margin-right: 0.7rem;
+  }
+}
+
+@media screen and (max-width: 558px) {
+  .cartItempage {
+    padding: 2em 8px;
+  }
+  .item_description {
+    font-size: 0.8rem;
+  }
+  .itemclass .price {
+    font-size: 0.9rem;
+  }
+  .item_price {
+    position: relative;
+  }
+  .item_price .quantity {
+    position: relative;
+    left: 14%;
+    max-width: 5rem;
+  }
+
+  .quantity .quantity_value {
+    font-weight: 500;
+    padding: 0.2rem 0.4rem;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .cartItempage {
+    padding: 2em 3px;
+  }
+  .item_name {
+    font-size: 0.9rem;
+  }
+  .cartitem_left {
+    margin: 1rem 0.6rem;
+  }
+  .item_image {
+    width: 100px;
+    height: 95px;
+  }
+
+  .cart_right_total_amount {
+    font-size: 14px;
+  }
+  .cart_right_price_heading,
+  .cart_right_price_details {
+    font-size: 14px;
+  }
+  .item_description {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 100%;
+    height: 43px;
+  }
+  .cartitemclass .item_price {
+    flex-direction: row-reverse;
+    margin-top: 0.1rem;
+    padding-top: 0.3rem;
+    float: none;
+    justify-content: flex-end;
+  }
+  .itemclass .price {
+    padding-top: 0.2rem;
+    float: none;
+  }
+  .itemrupee {
+    float: center;
+  }
+  .item_price .quantity {
+    left: 1%;
+  }
+  .place_order {
+    text-align: left;
+    padding: 12px 18px;
+  }
+  .order_button {
+    padding: 7px 24px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .itemclass .price {
+    padding-top: 0.2rem;
+  }
+  .item_price .quantity {
+    left: 1%;
+  }
+  .item_description {
+    height: 40px;
+  }
+  .item_name {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .cartItempage {
+    padding: 2em 1px;
+  }
+  .item_description {
+    height: 40px;
+  }
+  .item_price .quantity {
+    left: 0;
+  }
+  .itemclass .price {
+    padding-top: 0.2rem;
+  }
+  .item_name {
+    font-size: 0.8rem;
+  }
+  .item_price .quantity {
+    max-width: 4.8rem;
+  }
 }

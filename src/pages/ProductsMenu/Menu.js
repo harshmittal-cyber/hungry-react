@@ -8,7 +8,7 @@ const Menu = () => {
   useEffect(() => {
     setTimeout(() => {
       setShow(true);
-    }, 1000);
+    }, 2000);
     fetch("http://localhost:3000/api/v1/admin/category/getcategory")
       .then((res) => res.json())
       .then((categories) => {

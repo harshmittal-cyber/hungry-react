@@ -26,7 +26,7 @@ const Products = (props) => {
             <div className={`${style.product_image}`}>
               <div className={`${style.img_cvr}`}>
                 <LazyLoadImage
-                  src={`http://localhost:3000${product.productImage}`}
+                  src={`${process.env.REACT_APP_API_URL}${product.productImage}`}
                   alt={`${product.name}`}
                 />
               </div>

@@ -3,7 +3,7 @@ import Home from "./pages/Home/Home";
 import Menu from "./pages/ProductsMenu/Menu";
 import Enquiry from "./pages/Enquiry/Enquiry";
 import Navbar from "./components/Navbar/Navbar";
-import Cart from "./pages/Cart/Cart";
+import Cart from "./pages/Cart/Cart/Cart";
 import Login from "./pages/Login/Login";
 import Checkout from "./pages/Checkout/checkout";
 import Orders from "./pages/Order/Orders/orders";
@@ -30,6 +30,8 @@ function App() {
         position: "absolute",
         top: "50%",
         // left: "45%",
+        justifyContent: "center",
+        alignItems: "center",
         transform: "translate(0, -50%)",
       }}
     >
@@ -41,13 +43,13 @@ function App() {
         <Navbar />
         <Switch>
           <Route path="/" component={Home} exact />
-          <Route path="/menu" component={Menu} />
-          <Route path="/enquiry" component={Enquiry} />
-          <Route path="/cart" component={Cart} />
-          <Route path="/login" component={Login} />
-          <Route path="/checkout" component={Checkout} />
+          <Route path="/menu" exact component={Menu} />
+          <Route path="/enquiry" exact component={Enquiry} />
+          <Route path="/cart" exact component={Cart} />
+          <Route path="/login" exact component={Login} />
+          <Route path="/checkout" exact component={Checkout} />
           <Route path="/user/orders" component={Orders} exact />
-          <Route path="/order_details" component={Orderdetails} />
+          <Route path="/order_details" exact component={Orderdetails} />
           <Route component={Page404} />
         </Switch>
         {/* <Footer /> */}

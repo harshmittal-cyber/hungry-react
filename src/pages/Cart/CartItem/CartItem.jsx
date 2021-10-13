@@ -16,10 +16,7 @@ const CartItem = (props) => {
     <div className={` ${style.itemclass}`}>
       <div className={`flex ${style.cartItemWrapper}`}>
         <div className={`${style.cartitem_left}`}>
-          <div
-            className={`${style.item_image}`}
-            style={{ width: 112, height: 112 }}
-          >
+          <div className={`${style.item_image}`}>
             <LazyLoadImage
               src={`${process.env.REACT_APP_API_URL}${image}`}
               className={`${style.item_img}`}
@@ -31,7 +28,6 @@ const CartItem = (props) => {
           <div className={`col-12-12`}>
             <span className={`${style.item_name}`}>{name}</span>
             <span className={`${style.item_description}`}>{description}</span>
-            <div className={`${style.item_option}`}></div>
             <div className={`${style.item_price}`}>
               <div className={`${style.price}`}>
                 <div

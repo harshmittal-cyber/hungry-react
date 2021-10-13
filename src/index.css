@@ -135,6 +135,42 @@ body {
   align-self: center;
 }
 
+.align-stretch {
+  align-items: stretch;
+}
+
+.flex-display {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+/* padding */
+.pt-0 {
+  padding-top: 0 !important;
+}
+
+.pt-16 {
+  padding-top: 16px !important;
+}
+
+.pt-40 {
+  padding-top: 40px !important;
+}
+
+.pb-20 {
+  padding-bottom: 20px !important;
+}
+
+.pb-200 {
+  padding-bottom: 200px !important;
+}
+
+.pb-24 {
+  padding-bottom: 24px !important;
+}
+
 @media screen and (min-width: 280px) {
   .disable_button {
     width: 100%;

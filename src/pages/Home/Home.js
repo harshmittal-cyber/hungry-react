@@ -7,31 +7,24 @@ const Home = () => {
     <>
       <div className={`${style.intro_main}`}>
         <div className={`${style.intro}`}>
-          <div className={`${style.z}`}>
-            <div>Hi</div>
-            <div>Harsh</div>
-            <div>Hi</div>
-            <div>Harsh</div>
-            <div>Hi</div>
-            <div>Harsh</div>
-            <div>Hi</div>
-            <div>Harsh</div>
-
-            <div>Harsh</div>
-            <div>Hi</div>
-            <div>Harsh</div>
-            <div>Hi</div>
-            <div>Harsh</div>
-            <div>Hi</div>
-            <div>Harsh</div>
-            <div>Hi</div>
-            <div>Harsh</div>
-            <div>Hi</div>
-            <div>Harsh</div>
+          <div className={`${style.width_container} pt-40`}>
+            <div className={`${style.intro_container} pb-200`}>
+              <div
+                className={`${style.intro_content_container} pt-0 align-stretch `}
+              >
+                <div
+                  className={`${style.intro_content_container_inner} pb-24 pt-16 `}
+                >
+                  Hi
+                </div>
+                <div className={`${style.pizza} flex-display pb-20`}>
+                  <img src="/images/pizza.jpg" />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

@@ -3,7 +3,6 @@ import { Link, useHistory, NavLink } from "react-router-dom";
 import { setAuth, setOtp } from "../../store/auth";
 import { useDispatch, useSelector } from "react-redux";
 import { logOut } from "../../helpers/http/index";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import { resetCart } from "../../store/cart";
 import { resetOrder } from "../../store/order";
 import { resetData } from "../../store/userdata";
@@ -63,7 +62,7 @@ const Navbar = () => {
               <img
                 src="/images/close1.svg"
                 alt="close"
-                style={{ width: 64, height: 64 }}
+                style={{ width: 52, height: 52 }}
               />
             ) : (
               <>
@@ -106,22 +105,36 @@ const Navbar = () => {
               <div className="relative py-5 px-3 flex items-center">
                 {isAuth ? (
                   <>
-                    <LazyLoadImage
-                      src="/images/cart.svg"
-                      alt="cart"
-                      className={`${styles.cartimage}`}
-                    />
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                      />
+                    </svg>
                     {cartItems > 0 ? (
                       <span
-                        className={`absolute left-4 top-1 root_button text-white text-xs  py-0.2 ${
-                          cartTotalItems < 10 ? "px-2" : "px-1.5"
-                        } mt-2 `}
+                        className={` root_button text-white mt-2 `}
                         style={{
                           borderRadius: "7px",
                           border: "1px solid #fff",
+                          fontSize: "12px",
+                          width: "20px",
+                          height: "18px",
+                          textAlign: "center",
+                          position: "absolute",
+                          top: "1px",
+                          left: "19px",
+                          padding: "0px 3px 0px 2px",
                         }}
                       >
-                        {/* {!cartTotalItems ? 0 : cartTotalItems} */}
                         {cartItems}
                       </span>
                     ) : (
@@ -136,14 +149,15 @@ const Navbar = () => {
 
             {isAuth ? (
               <div className={`${styles.login_section}`}>
-                <LazyLoadImage
-                  src="/images/avatar.jpg"
-                  alt="avatar"
-                  data-label="profile"
-                  className={`${styles.profile_image}`}
+                <img
+                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                  alt="User"
+                  className="h-8 w-8 rounded-full"
                 />
                 <div className={`${styles.relative_container}`}>
-                  <div className={`${styles.profile_dropdown} text-gray-600`}>
+                  <div
+                    className={`${styles.profile_dropdown} text-gray-600  bg-white`}
+                  >
                     <div className={`${styles.user_name} text-gray-700`}>
                       {user.name}
                     </div>

@@ -15,9 +15,6 @@ const Enquiry = () => {
     message: "",
   };
 
-  // background-color: #ff5567;
-  /* background-color: #fc283f; */
-
   const [values, setValues] = useState(initialarray);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
@@ -121,6 +118,7 @@ const Enquiry = () => {
           <div className={`${style.form}`}>
             {error ? error : ""}
             {success ? (
+              // success body
               <div className={`${style.form_body}`}>
                 <div className={`${style.success_div}`}>
                   <LazyLoadImage
@@ -146,6 +144,7 @@ const Enquiry = () => {
                 <p className={`${style.form_subtitle}`}>
                   Please let us know your query
                 </p>
+                {/* Form For submitting the query */}
                 <form onSubmit={handleSubmit} autoComplete="off">
                   <div className={`${style.form_input_container}`}>
                     <input

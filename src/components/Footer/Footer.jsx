@@ -92,10 +92,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <LazyLoadImage
-                    alt="Hungry-facebook-Page"
-                    src="/images/facebook.png"
-                  />
+                  <img alt="Hungry-facebook-Page" src="/images/facebook.png" />
                 </a>
 
                 <a
@@ -103,7 +100,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <LazyLoadImage
+                  <img
                     alt="Hungry-Instagram-Page"
                     src="/images/instagram.png"
                   />
@@ -113,26 +110,17 @@ const Footer = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <LazyLoadImage
-                    alt="Hungry-Youtube-Page"
-                    src="/images/youtube.png"
-                  />
+                  <img alt="Hungry-Youtube-Page" src="/images/youtube.png" />
                 </a>
                 <a href="https://twitter.com/harsh_mittal18" target="_blank">
-                  <LazyLoadImage
-                    alt="Hungry-twitter-Page"
-                    src="/images/twitter.png"
-                  />
+                  <img alt="Hungry-twitter-Page" src="/images/twitter.png" />
                 </a>
                 <a
                   href="https://www.linkedin.com/in/harsh-mittal-252793206/"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <LazyLoadImage
-                    alt="Hungry-linkedin-Page"
-                    src="/images/linkedin.png"
-                  />
+                  <img alt="Hungry-linkedin-Page" src="/images/linkedin.png" />
                 </a>
               </div>
             </div>
@@ -143,17 +131,11 @@ const Footer = () => {
                 <p className={`${style.my_16}`}>CONTACT US</p>
                 <div className={`${style.links}`}>
                   <p className={`${style.row}`}>
-                    <LazyLoadImage
-                      src="/images/telephone.png"
-                      alt="Hungry-telephone"
-                    />
+                    <img src="/images/telephone.png" alt="Hungry-telephone" />
                     <a href="tel:9053268000">9053268000</a>
                   </p>
                   <p className={`${style.row}`}>
-                    <LazyLoadImage
-                      src="/images/mail.png"
-                      alt="Hungry-telephone"
-                    />
+                    <img src="/images/mail.png" alt="Hungry-telephone" />
                     <a
                       href="mailto:mittalharsh4321@gmail.com?Subject=Enquiry"
                       target="_top"
