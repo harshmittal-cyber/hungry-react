@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Redirect } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { getOrder } from "../../../actions/order.action";
 import moment from "moment";
@@ -6,9 +7,10 @@ import Footer from "../../../components/Footer/Footer";
 
 export default function Orderdetails(props) {
   const { order } = useSelector((state) => state.order);
-  const { user } = useSelector((state) => state.auth);
+  const { user, isAuth } = useSelector((state) => state.auth);
   const [loader, setLoader] = useState(true);
   const [step, setStep] = useState(0);
+  const { from } = { from: { pathname: "/menu" } };
 
   useEffect(() => {
     async function fetch() {
@@ -24,6 +26,7 @@ export default function Orderdetails(props) {
     }
     fetch();
   }, []);
+
   useEffect(() => {
     if (!loader) {
       const b = order.orderStatus[1].isCompleted === true;
@@ -35,6 +38,10 @@ export default function Orderdetails(props) {
       else setStep(0);
     }
   }, [loader]);
+
+  if (!isAuth) {
+    return <Redirect to={from} />;
+  }
 
   function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
@@ -251,7 +258,9 @@ export default function Orderdetails(props) {
                                 Shipping updates
                               </dt>
                               <dd className="mt-3 text-gray-500 space-y-3">
-                                <p className="font-thin">mittal@gmail.com</p>
+                                {/* <p className="font-thin text-xs">
+                                  // {user.email}
+                                </p> */}
                                 <p>{user.phone}</p>
                               </dd>
                             </div>
@@ -323,10 +332,6 @@ export default function Orderdetails(props) {
                               </svg>
                               <p className="sr-only">Razorpay</p>
                             </div>
-                            {/* <div className="ml-4 mt-4">
-                              <p className="text-gray-900">Ending with 4242</p>
-                              <p className="text-gray-600">Expires 02 / 24</p>
-                            </div> */}
                           </dd>
                         </div>
                       )}

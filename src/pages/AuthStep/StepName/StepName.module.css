@@ -97,4 +97,7 @@
   .name_input .name {
     width: 100%;
   }
+  .name input {
+    width: 100%;
+  }
 }

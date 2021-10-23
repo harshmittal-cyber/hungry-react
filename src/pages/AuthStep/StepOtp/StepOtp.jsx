@@ -14,6 +14,7 @@ const StepOtp = ({ onPrev }) => {
   const dispatch = useDispatch();
   const { phone, hash } = useSelector((state) => state.auth.otp);
   const name = useSelector((state) => state.userdata.name);
+  const email = useSelector((state) => state.userdata.email);
   const [counter, setCounter] = useState(60);
   const [error, setError] = useState("");
   const history = useHistory();
@@ -28,7 +29,7 @@ const StepOtp = ({ onPrev }) => {
     try {
       let otp = parseInt(otp1.join(""));
       if (otp.toString().length === 6) {
-        const { data } = await verifyOtp({ otp, phone, hash, name });
+        const { data } = await verifyOtp({ otp, phone, hash, name, email });
         dispatch(setAuth(data));
         dispatch(setName(data.user.name));
         history.goBack();
@@ -69,9 +70,9 @@ const StepOtp = ({ onPrev }) => {
     }
   }
 
-  function goback() {
-    onPrev();
-  }
+  // function goback() {
+  //   onPrev();
+  // }
 
   return (
     <Card title="Enter OTP">
@@ -127,7 +128,7 @@ const StepOtp = ({ onPrev }) => {
           </span>
         )}
       </p>
-      <div
+      {/* <div
         className="flex items-center justify-center bg-gray-100 px-2 py-1.5 "
         style={{ borderRadius: "42px", cursor: "pointer" }}
         onClick={goback}
@@ -144,7 +145,7 @@ const StepOtp = ({ onPrev }) => {
         >
           Go back
         </button>
-      </div>
+      </div> */}
     </Card>
   );
 };

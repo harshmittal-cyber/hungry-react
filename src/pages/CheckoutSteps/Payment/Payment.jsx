@@ -119,7 +119,6 @@ const Payment = ({ handleBack, handleNext }) => {
           amount: amount.toString(),
           currency: currency,
         };
-        console.log("resultdata", data);
         await axios
           .post(`${process.env.REACT_APP_API_URL}/success`, data)
           .then((res) => {
@@ -132,7 +131,7 @@ const Payment = ({ handleBack, handleNext }) => {
       },
       prefill: {
         name: user.name,
-        email: "mittalharsh4321@gmail.com",
+        email: user.email,
         phone_number: user.phone,
       },
     };

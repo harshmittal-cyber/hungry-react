@@ -15,10 +15,10 @@ const Home = () => {
                 <div
                   className={`${style.intro_content_container_inner} pb-24 pt-16 `}
                 >
-                  Hi
+                  hi
                 </div>
                 <div className={`${style.pizza} flex-display pb-20`}>
-                  <img src="/images/pizza.jpg" />
+                  <img src="/images/pizza.png" />
                 </div>
               </div>
             </div>

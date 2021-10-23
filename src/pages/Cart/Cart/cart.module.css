@@ -81,3 +81,25 @@ img {
     width: 92%;
   }
 }
+
+@media screen and (max-width: 548px) {
+  .text_1 {
+    font-size: 1rem;
+
+    /* text-align: center; */
+  }
+  .text_2 {
+    font-size: 0.9rem;
+  }
+  .button_container button {
+    padding: 0.4em 1rem;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 3px;
+    background-color: #ff5567;
+    border: 1px solid #ff5567;
+  }
+  .button_container_1 button {
+    padding: 0.3em 1rem;
+  }
+}

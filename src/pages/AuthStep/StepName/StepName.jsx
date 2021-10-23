@@ -5,7 +5,7 @@ import { setName } from "../../../store/userdata";
 import { useDispatch, useSelector } from "react-redux";
 import style from "./StepName.module.css";
 
-const StepName = ({ onNext, onPrev }) => {
+const StepName = ({ onNext }) => {
   const name = useSelector((state) => state.userdata.name);
   const dispatch = useDispatch();
   const [fullname, setFullName] = useState(name);
@@ -15,7 +15,7 @@ const StepName = ({ onNext, onPrev }) => {
       return;
     }
     await dispatch(setName(fullname));
-    onPrev();
+    onNext();
   }
 
   return (

@@ -1,15 +1,16 @@
 import React, { useState } from "react";
-// import styles from "./Login.module.css";
 import { Redirect } from "react-router-dom";
 import { useSelector } from "react-redux";
 import StepPhone from "../AuthStep/StepPhone/StepPhone";
 import StepOtp from "../AuthStep/StepOtp/StepOtp";
 import StepName from "../AuthStep/StepName/StepName";
+import StepEmail from "../AuthStep/StepEmail/StepEmail";
 
 const steps = {
   1: StepPhone,
   2: StepOtp,
   3: StepName,
+  4: StepEmail,
 };
 
 const Login = (props) => {
@@ -35,9 +36,18 @@ const Login = (props) => {
     setStep(step + 2);
   }
 
+  function onDoublePrev() {
+    setStep(step - 2);
+  }
+
   return (
     <div>
-      <Step onNext={onNext} onPrev={onPrev} onDouble={onDoubleStep} />
+      <Step
+        onNext={onNext}
+        onPrev={onPrev}
+        onDouble={onDoubleStep}
+        onDoublePrev={onDoublePrev}
+      />
     </div>
   );
 };

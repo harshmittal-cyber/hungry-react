@@ -154,8 +154,6 @@
 /* profile dropdown */
 .relative_container {
   position: relative;
-  /* top: 0.85rem; */
-  /* display: none; */
 }
 
 .header_container .profile_dropdown {
@@ -252,15 +250,25 @@
     right: 8px;
     font-size: 0.5rem;
   }
-  /* .login_section img {
-    height: 22px;
-    width: 22px;
-  } */
   .login_text {
     font-size: 0.5rem;
   }
   .cartimage {
     height: 24px;
     width: 24px;
+  }
+}
+
+@media screen and (max-width: 608px) {
+  .login_button {
+    padding: 6px 18px;
+  }
+}
+
+@media screen and (max-width: 319px) {
+  .login_button {
+    padding: 6px 12px;
+    font-size: 11px;
+    letter-spacing: 0.2px;
   }
 }

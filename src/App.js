@@ -27,12 +27,11 @@ function App() {
   return loading ? (
     <div
       style={{
-        position: "absolute",
-        top: "50%",
-        // left: "45%",
+        height: "100vh",
+        width: "100vw",
+        display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        transform: "translate(0, -50%)",
       }}
     >
       <img src="/images/hungrylogo.svg" alt="Hungry" />
@@ -52,7 +51,6 @@ function App() {
           <Route path="/order_details" exact component={Orderdetails} />
           <Route component={Page404} />
         </Switch>
-        {/* <Footer /> */}
       </div>
     </Router>
   );

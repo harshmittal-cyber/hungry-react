@@ -23,7 +23,7 @@ const Menu = () => {
           <ProductCategory key={category._id} category={category} />
         ))}
       </div>
-      {show ? <Footer /> : ""}
+      {/* {show ? <Footer /> : ""} */}
     </>
   );
 };

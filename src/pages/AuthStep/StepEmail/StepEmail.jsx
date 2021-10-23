@@ -1,50 +1,35 @@
 import React, { useState } from "react";
 import Button from "../../../components/Button/Button";
 import Card from "../../../components/Card/Card";
-import Input from "../../../components/Input/TextInput";
 import { setEmail } from "../../../store/userdata";
 import { useDispatch, useSelector } from "react-redux";
-import { setAuth } from "../../../store/auth";
-const StepName = ({ onNext }) => {
-  const name = useSelector((state) => state.userdata.name);
+import style from "../StepName/StepName.module.css";
 
+const StepName = ({ onNext, onPrev, onDoublePrev }) => {
   const email = useSelector((state) => state.userdata.email);
   const dispatch = useDispatch();
-  const [useremail, setUserEmail] = useState(email);
+  const [Email, setemail] = useState(email);
 
-  async function submit() {
-    if (!useremail) {
+  async function Continue() {
+    if (!Email) {
       return;
     }
-    await dispatch(setEmail(useremail));
+    await dispatch(setEmail(Email));
+    onDoublePrev();
   }
-  async function Continue() {
-    try {
-      if (email) {
-        if (data.auth) {
-          dispatch(setAuth(data));
-        }
-      }
-    } catch (err) {
-      console.log(err);
-    }
-  }
+
   return (
     <Card title="Enter Your Email ">
       <div className={`${style.name_input}`}>
         <div className={`${style.name}`}>
           <input
+            value={Email}
             placeholder="Enter Your Email"
-            onChange={(e) => setUserEmail(e.target.value)}
+            onChange={(e) => setemail(e.target.value)}
             className={`${style.input}`}
           />
         </div>
       </div>
-      {/* <Input
-        value={fullname}
-        placeholder="Enter Name"
-        onChange={(e) => setFullName(e.target.value)}
-      /> */}
 
       <Button text="Continue" onClick={Continue} />
     </Card>

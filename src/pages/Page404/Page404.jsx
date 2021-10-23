@@ -19,7 +19,7 @@ const Page404 = () => {
             >
               404 error
             </p>
-            <h1 className="mt-2 text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl">
+            <h1 className="mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-5xl">
               Page not found.
             </h1>
             <p className="mt-2 text-base text-gray-500">
@@ -27,11 +27,11 @@ const Page404 = () => {
             </p>
             <div className="mt-6">
               <Link
-                to="/"
+                to="/menu"
                 className="text-base font-medium"
                 style={{ color: "#fc283f" }}
               >
-                Go back home<span aria-hidden="true"> &rarr;</span>
+                Go back to Menu<span aria-hidden="true"> &rarr;</span>
               </Link>
             </div>
           </div>
