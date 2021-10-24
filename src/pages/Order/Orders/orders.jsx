@@ -13,7 +13,7 @@ const Orders = () => {
 
   useEffect(() => {
     getOrders();
-  }, []);
+  }, [isAuth]);
 
   return (
     <>

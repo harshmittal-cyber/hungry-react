@@ -254,3 +254,9 @@ form {
     width: 95%;
   }
 }
+
+@media (max-width: 390px) {
+  .section_img {
+    width: 97%;
+  }
+}
