@@ -4,7 +4,7 @@ import { setAuth, setOtp } from "../../store/auth";
 import { useDispatch, useSelector } from "react-redux";
 import { logOut } from "../../helpers/http/index";
 import { resetCart } from "../../store/cart";
-import { resetOrder } from "../../store/order";
+import { resetOrder, resetOrders } from "../../store/order";
 import { resetData } from "../../store/userdata";
 import { resetAddress } from "../../store/address";
 import { Sidebar } from "./Sidebar";
@@ -36,6 +36,7 @@ const Navbar = () => {
       dispatch(setAuth(data));
       dispatch(setOtp(data));
       dispatch(resetOrder());
+      dispatch(resetOrders());
       dispatch(resetData());
       dispatch(resetAddress());
       history.push("/menu");
