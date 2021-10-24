@@ -37,7 +37,7 @@ function App() {
       <img src="/images/hungrylogo.svg" alt="Hungry" />
     </div>
   ) : (
-    <Router>
+    <Router basename={window.location.pathname || ""}>
       <div className="App">
         <Navbar />
         <Switch>
