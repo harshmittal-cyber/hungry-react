@@ -9,7 +9,7 @@ const Menu = () => {
     setTimeout(() => {
       setShow(true);
     }, 2000);
-    fetch("http://localhost:3000/api/v1/admin/category/getcategory")
+    fetch("https://hungryjs.herokuapp.com/api/v1/admin/category/getcategory")
       .then((res) => res.json())
       .then((categories) => {
         setCategories(categories);
