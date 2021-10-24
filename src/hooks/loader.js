@@ -12,7 +12,7 @@ export function useLoading() {
     async function fetchb() {
       try {
         const { data } = await axios.get(
-          `https://hungryjs.herokuapp.com/api/v2/refreshtoken`,
+          `${process.env.REACT_APP_PROD_API}/api/v2/refreshtoken`,
           {
             withCredentials: true,
           }
