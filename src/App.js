@@ -14,6 +14,7 @@ import { useSelector } from "react-redux";
 import { useLoading } from "./hooks/loader";
 import { getcartItems } from "./actions/cart.action";
 import { getAddress } from "./actions/address.action";
+import { getOrders } from "./actions/order.action";
 
 function App() {
   const { loading } = useLoading();
@@ -22,6 +23,7 @@ function App() {
   useEffect(() => {
     getcartItems();
     getAddress();
+    getOrders();
   }, [isAuth]);
 
   return loading ? (
