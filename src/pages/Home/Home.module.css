@@ -36,6 +36,11 @@
   align-items: center;
 }
 
+.intro .intro_container .intro_content_container .pizza img {
+  height: 225px;
+  width: 276px;
+}
+
 @media screen and (min-width: 600px) {
   .intro_main {
     padding-bottom: 0;
