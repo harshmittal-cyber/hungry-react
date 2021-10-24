@@ -37,18 +37,18 @@ function App() {
       <img src="/images/hungrylogo.svg" alt="Hungry" />
     </div>
   ) : (
-    <Router basename={window.location.pathname || ""}>
+    <Router>
       <div className="App">
         <Navbar />
         <Switch>
           <Route path="/" component={Home} exact />
-          <Route path="/menu" exact component={Menu} />
-          <Route path="/enquiry" exact component={Enquiry} />
-          <Route path="/cart" exact component={Cart} />
+          <Route path="/menu" component={Menu} />
+          <Route path="/enquiry" component={Enquiry} />
+          <Route path="/cart" component={Cart} />
           <Route path="/login" exact component={Login} />
           <Route path="/checkout" exact component={Checkout} />
-          <Route path="/user/orders" component={Orders} exact />
-          <Route path="/order_details" exact component={Orderdetails} />
+          <Route path="/user/orders" component={Orders} />
+          <Route path="/order_details" component={Orderdetails} />
           <Route component={Page404} />
         </Switch>
       </div>
