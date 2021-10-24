@@ -51,7 +51,7 @@ api.interceptors.response.use(
 
         return api.request(originalRequest);
       } catch (err) {
-        console.log(err.message);
+        console.log(err);
       }
     }
     throw error;
