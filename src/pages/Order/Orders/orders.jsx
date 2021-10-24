@@ -12,14 +12,16 @@ const Orders = () => {
   const { isAuth } = useSelector((state) => state.auth);
 
   useEffect(() => {
-    getOrders();
+    if (isAuth) {
+      getOrders();
+    }
   }, [isAuth]);
 
   return (
     <>
       <div>
         <>
-          {orders.length > 0 ? (
+          {isAuth && orders.length > 0 ? (
             <>
               <div>
                 <div className={`${style.order}`}>
