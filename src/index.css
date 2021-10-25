@@ -99,6 +99,11 @@ body {
   align-items: center;
 }
 
+.item-center-hr {
+  display: flex;
+  justify-content: center;
+}
+
 /* width */
 .width-100 {
   width: 100%;
