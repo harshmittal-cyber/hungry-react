@@ -29,13 +29,74 @@
   text-align: center;
 }
 
+.intro .intro_container .intro_content_container .intro_head .intro_text {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 42px;
+  min-height: 110px;
+  box-sizing: border-box;
+  place-content: stretch flex-end;
+}
+
+.intro .intro_container .intro_content_container .intro_head .intro_hungry {
+  background: linear-gradient(#ff5567, #fc283f);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hungry_heading {
+  font: 600 24px / 52px Mulish, Roboto, "Helvetica Neue", sans-serif;
+  margin-top: 10px;
+}
+
+.heading_shrt {
+  font: 500 20px / 32px Mulish, Roboto, "Helvetica Neue", sans-serif;
+}
 .intro .intro_container .intro_content_container .pizza {
   position: relative;
   left: 0;
   justify-content: center;
   align-items: center;
 }
+.intro .button_container {
+  width: 100%;
+}
+.intro .menu_btn {
+  height: 48px;
+  min-height: 32px;
+  color: rgb(255, 255, 255);
+}
 
+.home_btn {
+  box-sizing: border-box;
+  position: relative;
+  user-select: none;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
+  display: inline-block;
+  white-space: nowrap;
+  text-decoration: none;
+  vertical-align: baseline;
+  text-align: center;
+  overflow: visible;
+  margin: 0;
+  min-height: 64px;
+  line-height: 22px;
+  border-radius: 6px;
+  padding: 0 24px;
+}
+
+.btn_text {
+  font: 600 16px / 22px Mulish, Roboto, "Helvetica Neue", sans-serif;
+}
+
+.menu_btn .button_wrapper > * {
+  vertical-align: middle;
+}
 .intro .intro_container .intro_content_container .pizza img {
   height: 225px;
   width: 276px;
@@ -56,6 +117,15 @@
     .intro_content_container_inner {
     text-align: left;
     padding-top: 0 !important;
+  }
+
+  .intro .button_container button .btn_text {
+    padding-left: 68px !important;
+    padding-right: 68px !important;
+  }
+  .hungry_heading {
+    font: 600 32px / 52px Mulish, Roboto, "Helvetica Neue", sans-serif;
+    margin-top: 10px;
   }
 }
 

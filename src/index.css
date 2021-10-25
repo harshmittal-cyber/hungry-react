@@ -171,6 +171,16 @@ body {
   padding-bottom: 24px !important;
 }
 
+.py-16 {
+  padding-top: 16px !important;
+  padding-bottom: 16px !important;
+}
+
+/* margin */
+.my-0 {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
 @media screen and (min-width: 280px) {
   .disable_button {
     width: 100%;
