@@ -127,7 +127,7 @@
 }
 .section_heading_2 {
   font-weight: 700;
-  font-size: 20px;
+  font-size: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -162,6 +162,12 @@
 
 .image_title span {
   font: 700 18px / 22px Mulish, Roboto, "Helvetica Neue", sans-serif;
+}
+
+@media screen and (min-width: 376px) {
+  .section_heading_2 {
+    font-size: 20px;
+  }
 }
 
 @media screen and (min-width: 600px) {

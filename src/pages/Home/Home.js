@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./Home.module.css";
 import { Link } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import Footer from "../../components/Footer/Footer";
 
 const Images = [
@@ -80,7 +81,7 @@ const Home = () => {
             {Images.map((item) => {
               return (
                 <div className={`${style.hungry_image_container}`}>
-                  <img src={`${item.path}`} alt="hungry-images" />
+                  <LazyLoadImage src={`${item.path}`} alt="hungry-images" />
                   <h1 class={`${style.image_title}`}>
                     <span>{item.title}</span>
                   </h1>
