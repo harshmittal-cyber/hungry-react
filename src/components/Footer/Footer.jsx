@@ -112,7 +112,11 @@ const Footer = () => {
                 >
                   <img alt="Hungry-Youtube-Page" src="/images/youtube.png" />
                 </a>
-                <a href="https://twitter.com/harsh_mittal18" target="_blank">
+                <a
+                  href="https://twitter.com/harsh_mittal18"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <img alt="Hungry-twitter-Page" src="/images/twitter.png" />
                 </a>
                 <a

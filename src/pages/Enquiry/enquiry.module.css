@@ -251,12 +251,24 @@ form {
     font-size: 15px;
   }
   .section_img {
-    width: 95%;
+    width: 100%;
   }
 }
 
 @media (max-width: 390px) {
   .section_img {
-    width: 97%;
+    width: 99%;
+  }
+}
+
+@media (max-width: 350px) {
+  .section_img {
+    width: 98.5%;
+  }
+}
+
+@media (max-width: 330px) {
+  .section_img {
+    width: 95%;
   }
 }
