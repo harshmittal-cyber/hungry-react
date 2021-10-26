@@ -63,7 +63,7 @@ const Home = () => {
                     </div>
                   </div>
                   <div className={`${style.pizza} flex-display pb-20`}>
-                    <img src="/images/pizza.png" />
+                    <img src="/images/pizza.png" alt="homepizza" />
                   </div>
                 </div>
               </div>
@@ -91,6 +91,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

@@ -54,8 +54,8 @@
 .cartitemclass {
   display: block;
   height: auto;
-  max-height: auto;
-  overflow-y: hidden;
+  max-height: 440px;
+  overflow-y: scroll;
 }
 .itemclass {
   border-top: 1px solid #f0f0f0 !important;
