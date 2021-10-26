@@ -108,7 +108,7 @@ const Payment = ({ handleBack, handleNext }) => {
       amount: amount.toString(),
       order_id: order_id,
       name: "HUNGRY",
-      image: `http://localhost:2000/images/favicon.svg`,
+      image: `https://hungrypizza.herokuapp.com/images/favicon.svg`,
       description: "Payment Receipt",
       handler: async function (response) {
         const data = {
