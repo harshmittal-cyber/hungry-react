@@ -20,7 +20,7 @@ const StepPhone = ({ onNext, onDouble }) => {
   async function submit() {
     //server request
     const { data } = await sendOtp({ phone });
-    console.log(data);
+    // console.log(data);
     if (data.user === null) {
       dispatch(setOtp({ phone: data.phone, hash: data.hash }));
       onDouble();
