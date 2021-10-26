@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { getOrders } from "../../../actions/order.action";
-import Footer from "../../../components/Footer/Footer";
 import style from "./orders.module.css";
 import moment from "moment";
 import styles from "../../Cart/Cart/cart.module.css";

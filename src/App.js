@@ -15,16 +15,21 @@ import { useLoading } from "./hooks/loader";
 import { getcartItems } from "./actions/cart.action";
 import { getAddress } from "./actions/address.action";
 import { getOrders } from "./actions/order.action";
-
+import { getCategories } from "./actions/menu.action";
 function App() {
   const { loading } = useLoading();
   const { isAuth } = useSelector((state) => state.auth);
 
   useEffect(() => {
+    console.log(`${process.env.REACT_APP_PROD_API}`);
     getcartItems();
     getAddress();
     getOrders();
   }, [isAuth]);
+
+  useEffect(() => {
+    getCategories();
+  }, []);
 
   return loading ? (
     <div

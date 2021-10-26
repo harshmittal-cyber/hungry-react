@@ -4,6 +4,7 @@ import userdata from "./userdata";
 import cart from "./cart";
 import Address from "./address";
 import order from "./order";
+import menu from "./menu";
 
 export const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ export const store = configureStore({
     cart,
     Address,
     order,
+    menu,
   },
 });
 
