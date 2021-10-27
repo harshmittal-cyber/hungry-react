@@ -59,11 +59,6 @@ const Navbar = () => {
             onClick={sidebartoggle}
           >
             {sidebar ? (
-              // <img
-              //   src="/images/close1.svg"
-              //   alt="close"
-              //   style={{ width: 52, height: 52 }}
-              // />
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="h-20 w-20"
