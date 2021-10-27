@@ -80,7 +80,10 @@ const Home = () => {
           <div className={`${style.hungry_portfolio_container}`}>
             {Images.map((item) => {
               return (
-                <div className={`${style.hungry_image_container}`}>
+                <div
+                  className={`${style.hungry_image_container}`}
+                  key={item.id}
+                >
                   <LazyLoadImage src={`${item.path}`} alt="hungry-images" />
                   <h1 class={`${style.image_title}`}>
                     <span>{item.title}</span>

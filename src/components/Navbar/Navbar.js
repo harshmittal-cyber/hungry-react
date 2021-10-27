@@ -59,11 +59,25 @@ const Navbar = () => {
             onClick={sidebartoggle}
           >
             {sidebar ? (
-              <img
-                src="/images/close1.svg"
-                alt="close"
-                style={{ width: 52, height: 52 }}
-              />
+              // <img
+              //   src="/images/close1.svg"
+              //   alt="close"
+              //   style={{ width: 52, height: 52 }}
+              // />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-20 w-20"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
             ) : (
               <>
                 <div className={`${styles.stick} ${styles.stick1}`}></div>
