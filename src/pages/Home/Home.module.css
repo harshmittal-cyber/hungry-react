@@ -1,11 +1,8 @@
 .home {
   padding: 0;
   /* background: #faf7f2 !important; */
-  background: #f8f7f7 !important;
+  background-color: #f8f7f7 !important;
 }
-/* .intro_main { 
-  padding-bottom: 150px;
-}  */
 
 .intro {
   position: relative;
@@ -137,7 +134,7 @@
   display: flex;
   flex-wrap: wrap;
   padding: 0 50px;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   justify-content: space-around;
 }
 

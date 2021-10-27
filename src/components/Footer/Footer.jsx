@@ -10,7 +10,7 @@ const Footer = () => {
         <div className={`${style.footer_left}`}>
           <div>
             <LazyLoadImage
-              src="/images/hungrylogo.svg"
+              src={`${process.env.REACT_APP_BASE_URL}/images/hungrylogo.svg`}
               alt="hungry-logo"
               className={`${style.logo}`}
             />
@@ -92,7 +92,10 @@ const Footer = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <img alt="Hungry-facebook-Page" src="/images/facebook.png" />
+                  <img
+                    alt="Hungry-facebook-Page"
+                    src={`${process.env.REACT_APP_BASE_URL}/images/facebook.png`}
+                  />
                 </a>
 
                 <a
@@ -102,7 +105,7 @@ const Footer = () => {
                 >
                   <img
                     alt="Hungry-Instagram-Page"
-                    src="/images/instagram.png"
+                    src={`${process.env.REACT_APP_BASE_URL}/images/instagram.png`}
                   />
                 </a>
                 <a
@@ -110,21 +113,30 @@ const Footer = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <img alt="Hungry-Youtube-Page" src="/images/youtube.png" />
+                  <img
+                    alt="Hungry-Youtube-Page"
+                    src={`${process.env.REACT_APP_BASE_URL}/images/youtube.png`}
+                  />
                 </a>
                 <a
                   href="https://twitter.com/harsh_mittal18"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <img alt="Hungry-twitter-Page" src="/images/twitter.png" />
+                  <img
+                    alt="Hungry-twitter-Page"
+                    src={`${process.env.REACT_APP_BASE_URL}/images/twitter.png`}
+                  />
                 </a>
                 <a
                   href="https://www.linkedin.com/in/harsh-mittal-252793206/"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <img alt="Hungry-linkedin-Page" src="/images/linkedin.png" />
+                  <img
+                    alt="Hungry-linkedin-Page"
+                    src={`${process.env.REACT_APP_BASE_URL}/images/linkedin.png`}
+                  />
                 </a>
               </div>
             </div>
@@ -135,11 +147,17 @@ const Footer = () => {
                 <p className={`${style.my_16}`}>CONTACT US</p>
                 <div className={`${style.links}`}>
                   <p className={`${style.row}`}>
-                    <img src="/images/telephone.png" alt="Hungry-telephone" />
+                    <img
+                      src={`${process.env.REACT_APP_BASE_URL}/images/telephone.png`}
+                      alt="Hungry-telephone"
+                    />
                     <a href="tel:9053268000">9053268000</a>
                   </p>
                   <p className={`${style.row}`}>
-                    <img src="/images/mail.png" alt="Hungry-telephone" />
+                    <img
+                      src={`${process.env.REACT_APP_BASE_URL}/images/mail.png`}
+                      alt="Hungry-telephone"
+                    />
                     <a
                       href="mailto:mittalharsh4321@gmail.com?Subject=Enquiry"
                       target="_top"

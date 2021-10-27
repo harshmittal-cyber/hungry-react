@@ -216,7 +216,7 @@
 .responsive_drawer .responsive_drawer_content {
   padding: 40px 50px;
   width: 100%;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;

@@ -85,7 +85,7 @@ const Navbar = () => {
             <div className={`${styles.main_logo}`}>
               <Link to="/">
                 <img
-                  src="/images/hungrylogo.svg"
+                  src={`${process.env.REACT_APP_BASE_URL}/images/hungrylogo.svg`}
                   alt="Hungry"
                   style={{ objectFit: "cover" }}
                 />

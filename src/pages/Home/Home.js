@@ -6,15 +6,15 @@ import Footer from "../../components/Footer/Footer";
 
 const Images = [
   {
-    path: "/images/Deliveryboy.svg",
+    path: `${process.env.REACT_APP_BASE_URL}/images/Deliveryboy.svg`,
     title: "Fastest Delivery",
   },
   {
-    path: "/images/driverboy.svg",
+    path: `${process.env.REACT_APP_BASE_URL}/images/driverboy.svg`,
     title: "Easy To Order",
   },
   {
-    path: "/images/freeshipboy.svg",
+    path: `${process.env.REACT_APP_BASE_URL}/images/freeshipboy.svg`,
     title: "Free Shipping",
   },
 ];
@@ -63,7 +63,10 @@ const Home = () => {
                     </div>
                   </div>
                   <div className={`${style.pizza} flex-display pb-20`}>
-                    <img src="/images/pizza.png" alt="homepizza" />
+                    <img
+                      src={`${process.env.REACT_APP_BASE_URL}/images/pizza.png`}
+                      alt="homepizza"
+                    />
                   </div>
                 </div>
               </div>
