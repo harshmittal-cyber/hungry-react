@@ -6,15 +6,15 @@ import Footer from "../../components/Footer/Footer";
 
 const Images = [
   {
-    path: "/images/Delivery.svg",
+    path: "/images/Deliveryboy.svg",
     title: "Fastest Delivery",
   },
   {
-    path: "/images/driver.svg",
+    path: "/images/driverboy.svg",
     title: "Easy To Order",
   },
   {
-    path: "/images/freeship.svg",
+    path: "/images/freeshipboy.svg",
     title: "Free Shipping",
   },
 ];
