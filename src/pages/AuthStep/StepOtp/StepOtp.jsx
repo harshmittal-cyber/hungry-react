@@ -37,7 +37,7 @@ const StepOtp = ({ onPrev }) => {
         setError("Please Enter 6 digits OTP");
       }
     } catch (err) {
-      console.log(err.message);
+      console.log("érr", err.message);
     }
   }
 
@@ -46,7 +46,6 @@ const StepOtp = ({ onPrev }) => {
 
     setotp([...otp1.map((d, idx) => (idx === index ? element.value : d))]);
 
-    //Focus next input
     if (element.nextSibling) {
       element.nextSibling.focus();
     }
