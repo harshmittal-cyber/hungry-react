@@ -38,6 +38,7 @@ const Home = () => {
                         className={`${style.intro_text} flex-display flex-column align-stretch`}
                       >
                         Fastest In Delivering Your Food
+                        {/* Yummy Pizza Delivered fast & fresh */}
                       </div>
                       <h1
                         className={`${style.intro_hungry} ${style.hungry_heading} my-0`}

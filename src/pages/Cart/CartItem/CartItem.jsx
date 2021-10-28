@@ -1,10 +1,12 @@
 import React from "react";
 import style from "./cartitem.module.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { useSelector } from "react-redux";
 
 const CartItem = (props) => {
   const { name, price, quantity, image, description } = props.cartitem;
   const { onDeleteProduct, onIncreaseQuantity, onDecreaseQuantity } = props;
+  const { inProgress } = useSelector((state) => state.cart);
 
   const getItemTotal = (qty, price1) => {
     let total = 0;
@@ -51,14 +53,20 @@ const CartItem = (props) => {
                     <div
                       className={`${style.decrease}`}
                       data-label={`${props.cartitem._id}`}
-                      onClick={() => onDecreaseQuantity(props.cartitem)}
+                      onClick={
+                        inProgress
+                          ? ""
+                          : () => onDecreaseQuantity(props.cartitem)
+                      }
                     ></div>
                   )}
                   <span className={`${style.quantity_value}`}>{quantity}</span>
                   <div
                     className={`${style.increase}`}
                     data-label="increase"
-                    onClick={() => onIncreaseQuantity(props.cartitem)}
+                    onClick={
+                      inProgress ? "" : () => onIncreaseQuantity(props.cartitem)
+                    }
                   ></div>
                 </div>
               </div>

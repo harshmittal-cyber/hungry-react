@@ -26,7 +26,7 @@ const Cart = () => {
     if (product.quantity === 1) {
       return;
     }
-    addToCart(product, -1);
+    const response = addToCart(product, -1);
   };
 
   // deleteing the product from cart

@@ -1,5 +1,5 @@
 import { addtocart, getcart } from "../helpers/http/index";
-import { setCart } from "../store/cart";
+import { setCart, cartProgress } from "../store/cart";
 import store from "../store/index";
 
 export const getcartItems = async () => {
@@ -14,6 +14,7 @@ export const getcartItems = async () => {
         const cartTotalItems = Object.keys(res.data.cartItems).length;
         if (cartItems) {
           dispatch(setCart({ cartItems, cartTotalItems, cartTotal }));
+          dispatch(cartProgress(false));
         }
       }
     } else {
@@ -29,10 +30,13 @@ export async function addToCart(cartproduct, newqty = 1) {
     auth,
     cart: { CartItems },
   } = store.getState();
+  const { dispatch } = store;
+
   let cartItem = { ...CartItems };
   if (!cartItem) {
     cartItem = {};
   }
+  dispatch(cartProgress(true));
   const quantity = cartItem[cartproduct._id]
     ? parseInt(cartItem[cartproduct._id].quantity + newqty)
     : 1;
