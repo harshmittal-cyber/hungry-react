@@ -14,6 +14,8 @@ const CartItem = (props) => {
     return total;
   };
 
+  const disableaction = () => {};
+
   return (
     <div className={` ${style.itemclass}`}>
       <div className={`flex ${style.cartItemWrapper}`}>
@@ -55,7 +57,7 @@ const CartItem = (props) => {
                       data-label={`${props.cartitem._id}`}
                       onClick={
                         inProgress
-                          ? ""
+                          ? () => disableaction()
                           : () => onDecreaseQuantity(props.cartitem)
                       }
                     ></div>
@@ -65,7 +67,9 @@ const CartItem = (props) => {
                     className={`${style.increase}`}
                     data-label="increase"
                     onClick={
-                      inProgress ? "" : () => onIncreaseQuantity(props.cartitem)
+                      inProgress
+                        ? () => disableaction()
+                        : () => onIncreaseQuantity(props.cartitem)
                     }
                   ></div>
                 </div>

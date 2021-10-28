@@ -23,6 +23,7 @@ export const cart = createSlice({
       state.CartItems = action.payload.cartItems;
       state.cartTotalItems = action.payload.cartTotalItems;
       state.cartTotal = action.payload.cartTotal;
+      state.inProgress = false;
     },
     resetCart: (state, action) => {
       state.CartItems = initialState.CartItems;
@@ -30,7 +31,6 @@ export const cart = createSlice({
       state.cartTotal = initialState.cartTotal;
     },
     cartProgress: (state, action) => {
-      console.log(action.payload);
       state.inProgress = action.payload;
     },
   },
