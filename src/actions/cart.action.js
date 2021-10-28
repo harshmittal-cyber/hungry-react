@@ -14,6 +14,7 @@ export const getcartItems = async () => {
         const cartTotalItems = Object.keys(res.data.cartItems).length;
         if (cartItems) {
           dispatch(setCart({ cartItems, cartTotalItems, cartTotal }));
+          dispatch(cartProgress(false));
         }
       }
     } else {

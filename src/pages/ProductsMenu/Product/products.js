@@ -8,6 +8,7 @@ import { addToCart } from "../../../actions/cart.action";
 const Products = (props) => {
   const { product } = props;
   const { isAuth } = useSelector((state) => state.auth);
+  // const { inProgress } = useSelector((state) => state.cart);
   const [adding, setAdding] = useState(false);
 
   function additemincart(cartproduct) {
