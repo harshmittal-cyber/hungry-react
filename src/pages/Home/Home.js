@@ -56,7 +56,7 @@ const Home = () => {
                         >
                           <span class={`${style.button_wrapper}`}>
                             <span className={`${style.btn_text}`}>
-                              Explore Our Menu
+                              ORDER ONLINE NOW
                             </span>
                           </span>
                         </button>

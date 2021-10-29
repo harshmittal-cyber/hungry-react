@@ -49,12 +49,12 @@ function App() {
         <Navbar />
         <Switch>
           <Route path="/" component={Home} exact />
-          <Route path="/menu" component={Menu} />
-          <Route path="/enquiry" component={Enquiry} />
-          <Route path="/cart" component={Cart} />
+          <Route path="/menu" exact component={Menu} />
+          <Route path="/enquiry" exact component={Enquiry} />
+          <Route path="/cart" exact component={Cart} />
           <Route path="/login" exact component={Login} />
           <Route path="/checkout" exact component={Checkout} />
-          <Route path="/user/orders" component={Orders} />
+          <Route path="/user/orders" exact component={Orders} />
           <Route path="/order_details" component={Orderdetails} />
           <Route component={Page404} />
         </Switch>
