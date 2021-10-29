@@ -92,7 +92,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <img
+                  <LazyLoadImage
                     alt="Hungry-facebook-Page"
                     src={`${process.env.REACT_APP_BASE_URL}/images/facebook.png`}
                   />
@@ -103,7 +103,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <img
+                  <LazyLoadImage
                     alt="Hungry-Instagram-Page"
                     src={`${process.env.REACT_APP_BASE_URL}/images/instagram.png`}
                   />
@@ -113,7 +113,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <img
+                  <LazyLoadImage
                     alt="Hungry-Youtube-Page"
                     src={`${process.env.REACT_APP_BASE_URL}/images/youtube.png`}
                   />
@@ -123,7 +123,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <img
+                  <LazyLoadImage
                     alt="Hungry-twitter-Page"
                     src={`${process.env.REACT_APP_BASE_URL}/images/twitter.png`}
                   />
@@ -133,7 +133,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <img
+                  <LazyLoadImage
                     alt="Hungry-linkedin-Page"
                     src={`${process.env.REACT_APP_BASE_URL}/images/linkedin.png`}
                   />
@@ -147,14 +147,14 @@ const Footer = () => {
                 <p className={`${style.my_16}`}>CONTACT US</p>
                 <div className={`${style.links}`}>
                   <p className={`${style.row}`}>
-                    <img
+                    <LazyLoadImage
                       src={`${process.env.REACT_APP_BASE_URL}/images/telephone.png`}
                       alt="Hungry-telephone"
                     />
                     <a href="tel:9053268000">9053268000</a>
                   </p>
                   <p className={`${style.row}`}>
-                    <img
+                    <LazyLoadImage
                       src={`${process.env.REACT_APP_BASE_URL}/images/mail.png`}
                       alt="Hungry-telephone"
                     />

@@ -18,10 +18,10 @@ export function useLoading() {
           }
         );
 
-        //getting cart items
-        await getcartItems();
+        // //getting cart items
+        // await getcartItems();
         //getting all orders
-        await getOrders();
+        // await getOrders();
         //getting order
         dispatch(setAuth(data));
         setLoading(false);

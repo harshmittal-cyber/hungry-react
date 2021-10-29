@@ -1,14 +1,15 @@
+import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./pages/Home/Home";
-import Menu from "./pages/ProductsMenu/Menu";
-import Enquiry from "./pages/Enquiry/Enquiry";
+// import Menu from "./pages/ProductsMenu/Menu";
+// import Enquiry from "./pages/Enquiry/Enquiry";
 import Navbar from "./components/Navbar/Navbar";
-import Cart from "./pages/Cart/Cart/Cart";
-import Login from "./pages/Login/Login";
-import Checkout from "./pages/Checkout/checkout";
-import Orders from "./pages/Order/Orders/orders";
-import Page404 from "./pages/Page404/Page404";
-import Orderdetails from "./pages/Order/orderdetail/Orderdetails";
+// import Cart from "./pages/Cart/Cart/Cart";
+// import Login from "./pages/Login/Login";
+// import Checkout from "./pages/Checkout/checkout";
+// import Orders from "./pages/Order/Orders/orders";
+// import Page404 from "./pages/Page404/Page404";
+// import Orderdetails from "./pages/Order/orderdetail/Orderdetails";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useLoading } from "./hooks/loader";
@@ -17,14 +18,28 @@ import { getAddress } from "./actions/address.action";
 import { getOrders } from "./actions/order.action";
 import { getCategories } from "./actions/menu.action";
 
+const LazyCheckout = React.lazy(() => import("./pages/Checkout/checkout"));
+const LazyMenu = React.lazy(() => import("./pages/ProductsMenu/Menu"));
+const LazyEnquiry = React.lazy(() => import("./pages/Enquiry/Enquiry"));
+const LazyCart = React.lazy(() => import("./pages/Cart/Cart/Cart"));
+const LazyLogin = React.lazy(() => import("./pages/Login/Login"));
+const LazyOrders = React.lazy(() => import("./pages/Order/Orders/orders"));
+const LazyOrderdetails = React.lazy(() =>
+  import("./pages/Order/orderdetail/Orderdetails")
+);
+
+const LazyPage404 = React.lazy(() => import("./pages/Page404/Page404"));
+
 function App() {
   const { loading } = useLoading();
   const { isAuth } = useSelector((state) => state.auth);
 
   useEffect(() => {
-    getcartItems();
-    getAddress();
-    getOrders();
+    if (isAuth) {
+      getcartItems();
+      getAddress();
+      getOrders();
+    }
   }, [isAuth]);
 
   useEffect(() => {
@@ -48,15 +63,17 @@ function App() {
       <div className="App">
         <Navbar />
         <Switch>
-          <Route path="/" component={Home} exact />
-          <Route path="/menu" exact component={Menu} />
-          <Route path="/enquiry" exact component={Enquiry} />
-          <Route path="/cart" exact component={Cart} />
-          <Route path="/login" exact component={Login} />
-          <Route path="/checkout" exact component={Checkout} />
-          <Route path="/user/orders" exact component={Orders} />
-          <Route path="/order_details" component={Orderdetails} />
-          <Route component={Page404} />
+          <React.Suspense fallback="Loading...">
+            <Route path="/" component={Home} exact />
+            <Route path="/menu" exact component={LazyMenu} />
+            <Route path="/enquiry" exact component={LazyEnquiry} />
+            <Route path="/cart" exact component={LazyCart} />
+            <Route path="/login" exact component={LazyLogin} />
+            <Route path="/checkout" exact component={LazyCheckout} />
+            <Route path="/user/orders" exact component={LazyOrders} />
+            <Route path="/order_details" component={LazyOrderdetails} />
+            {/* <Route component={LazyPage404} /> */}
+          </React.Suspense>
         </Switch>
       </div>
     </Router>
