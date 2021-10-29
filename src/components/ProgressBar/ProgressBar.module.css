@@ -1,0 +1,4 @@
+.progressbar {
+  background-image: linear-gradient(90deg, #ff5567, #fc2837);
+  height: 3px;
+}

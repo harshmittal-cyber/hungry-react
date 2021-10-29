@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { setAuth } from "../store/auth";
 import { getcartItems } from "../actions/cart.action";
 import { getOrders } from "../actions/order.action";
+import { getCategories } from "../actions/menu.action";
 import axios from "axios";
 
 export function useLoading() {
@@ -23,6 +24,9 @@ export function useLoading() {
         //getting all orders
         // await getOrders();
         //getting order
+        if (window.location.pathname === "/menu") {
+          await getCategories();
+        }
         dispatch(setAuth(data));
         setLoading(false);
       } catch (err) {
