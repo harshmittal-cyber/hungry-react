@@ -22,7 +22,7 @@ const LazyOrderdetails = React.lazy(() =>
   import("./pages/Order/orderdetail/Orderdetails")
 );
 
-const LazyPage404 = React.lazy(() => import("./pages/Page404/Page404"));
+// const LazyPage404 = React.lazy(() => import("./pages/Page404/Page404"));
 
 function App() {
   const { loading } = useLoading();

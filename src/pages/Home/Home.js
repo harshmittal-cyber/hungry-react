@@ -8,14 +8,17 @@ const Images = [
   {
     path: `${process.env.REACT_APP_BASE_URL}/images/Deliveryboy.svg`,
     title: "Fastest Delivery",
+    id: 1,
   },
   {
     path: `${process.env.REACT_APP_BASE_URL}/images/driverboy.svg`,
     title: "Easy To Order",
+    id: 2,
   },
   {
     path: `${process.env.REACT_APP_BASE_URL}/images/freeshipboy.svg`,
     title: "Free Shipping",
+    id: 3,
   },
 ];
 
@@ -54,7 +57,7 @@ const Home = () => {
                         <button
                           className={`${style.menu_btn} ${style.home_btn} root_button`}
                         >
-                          <span class={`${style.button_wrapper}`}>
+                          <span className={`${style.button_wrapper}`}>
                             <span className={`${style.btn_text}`}>
                               ORDER ONLINE NOW
                             </span>
@@ -89,7 +92,7 @@ const Home = () => {
                   key={item.id}
                 >
                   <LazyLoadImage src={`${item.path}`} alt="hungry-images" />
-                  <h1 class={`${style.image_title}`}>
+                  <h1 className={`${style.image_title}`}>
                     <span>{item.title}</span>
                   </h1>
                 </div>

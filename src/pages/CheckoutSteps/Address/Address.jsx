@@ -12,6 +12,10 @@ import { setAddress } from "../../../store/address";
 import { getAddress } from "../../../actions/address.action";
 
 const Address = ({ handleNext }) => {
+  React.useEffect(() => {
+    getAddress();
+  }, []);
+
   const dispatch = useDispatch();
   const { useraddress } = useSelector((state) => state.Address);
   const addressarray = {
@@ -29,10 +33,6 @@ const Address = ({ handleNext }) => {
   };
   const [values, setValues] = React.useState(addressarray);
   const [check, setCheck] = React.useState(false);
-
-  React.useEffect(() => {
-    getAddress();
-  }, []);
 
   function handleaddress(e) {
     if (e.target.checked) {
