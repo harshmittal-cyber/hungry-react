@@ -8,7 +8,7 @@ const Menu = () => {
 
   useEffect(() => {
     setCategories(categories);
-  });
+  }, [categories]);
 
   return (
     <>

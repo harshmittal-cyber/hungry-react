@@ -9,7 +9,6 @@ import { resetData } from "../../store/userdata";
 import { resetAddress } from "../../store/address";
 import { Sidebar } from "./Sidebar";
 import styles from "./Navbar.module.css";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -84,13 +83,14 @@ const Navbar = () => {
           </div>
           <div className={`${styles.header_content} ${styles.middle_header}`}>
             <div className={`${styles.main_logo}`}>
-              <Link to="/">
+              {/* <Link to="/">
                 <img
                   src={`${process.env.REACT_APP_BASE_URL}/images/hungrylogo.svg`}
                   alt="Hungry"
                   style={{ objectFit: "cover" }}
                 />
-              </Link>
+              </Link> */}
+              HUNGRY
             </div>
             <ul className={`${styles.menu_items} text-gray-700`}>
               {Sidebar.map((item, index) => {

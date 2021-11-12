@@ -9,11 +9,12 @@ const Footer = () => {
       <div className={`${style.footer_container}`}>
         <div className={`${style.footer_left}`}>
           <div>
-            <LazyLoadImage
+            {/* <LazyLoadImage
               src={`${process.env.REACT_APP_BASE_URL}/images/hungrylogo.svg`}
               alt="hungry-logo"
               className={`${style.logo}`}
-            />
+            /> */}
+            HUNGRY
             <div className={`${style.copyright_container_1}`}>
               Copyright © Hungry Food Pvt. Ltd.
             </div>
