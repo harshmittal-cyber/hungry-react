@@ -83,14 +83,13 @@ const Navbar = () => {
           </div>
           <div className={`${styles.header_content} ${styles.middle_header}`}>
             <div className={`${styles.main_logo}`}>
-              {/* <Link to="/">
+              <Link to="/">
                 <img
                   src={`${process.env.REACT_APP_BASE_URL}/images/hungrylogo.svg`}
                   alt="Hungry"
                   style={{ objectFit: "cover" }}
                 />
-              </Link> */}
-              HUNGRY
+              </Link>
             </div>
             <ul className={`${styles.menu_items} text-gray-700`}>
               {Sidebar.map((item, index) => {
