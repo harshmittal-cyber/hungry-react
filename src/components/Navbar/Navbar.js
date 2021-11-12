@@ -85,7 +85,7 @@ const Navbar = () => {
           <div className={`${styles.header_content} ${styles.middle_header}`}>
             <div className={`${styles.main_logo}`}>
               <Link to="/">
-                <LazyLoadImage
+                <img
                   src={`${process.env.REACT_APP_BASE_URL}/images/hungrylogo.svg`}
                   alt="Hungry"
                   style={{ objectFit: "cover" }}

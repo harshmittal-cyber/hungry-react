@@ -22,6 +22,7 @@ const Enquiry = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     fetch("https://hungryjs.herokuapp.com/api/v1/enquiry", {
+      // fetch("http://localhost:3000/api/v1/enquiry", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: JSON.stringify(getFormBody(values)),
