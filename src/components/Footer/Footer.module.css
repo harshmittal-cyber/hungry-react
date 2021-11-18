@@ -4,6 +4,14 @@
   padding: 50px 20px;
 }
 
+.footer_logo {
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  font-size: 1.6em;
+  padding: 5px 0px 8px 0;
+  /* margin-left: 0.6rem; */
+}
+
 .back {
   background: #222e3a;
   position: relative;
@@ -170,6 +178,10 @@
     color: #526274;
     font: 400 12px/16px Mulish, Roboto, Helvetica Neue, sans-serif;
   }
+  .footer_logo {
+    font-size: 1.3rem;
+    margin-left: 0;
+  }
 }
 
 @media screen and (max-width: 720px) {
@@ -190,5 +202,9 @@
 @media screen and (max-width: 600px) {
   .middle_container {
     flex-direction: column;
+  }
+  .footer_logo {
+    font-size: 1.3rem;
+    margin-left: 0;
   }
 }

@@ -83,13 +83,24 @@ const Navbar = () => {
           </div>
           <div className={`${styles.header_content} ${styles.middle_header}`}>
             <div className={`${styles.main_logo}`}>
-              <Link to="/">
+              {/* <Link to="/">
                 <img
                   src={`${process.env.REACT_APP_BASE_URL}/images/hungrylogo.svg`}
                   alt="Hungry"
                   style={{ objectFit: "cover" }}
                 />
-              </Link>
+              </Link> */}
+              <span
+                style={{
+                  fontWeight: 900,
+                  letterSpacing: "0.5px",
+                  fontSize: "1em",
+                  padding: "1rem",
+                }}
+              >
+                <span style={{ color: "#fc283f" }}>H</span>
+                <span>UNGRY</span>
+              </span>
             </div>
             <ul className={`${styles.menu_items} text-gray-700`}>
               {Sidebar.map((item, index) => {

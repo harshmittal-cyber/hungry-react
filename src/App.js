@@ -36,10 +36,6 @@ function App() {
     }
   }, [isAuth]);
 
-  useEffect(() => {
-    getCategories();
-  }, []);
-
   return loading ? (
     <>
       <div
@@ -61,7 +57,6 @@ function App() {
     <Router>
       <div className="App">
         <React.Suspense fallback={<ProgressBar />}>
-          {/* <ProgressBar /> */}
           <Navbar />
           <Switch>
             <Route path="/" component={Home} exact />
