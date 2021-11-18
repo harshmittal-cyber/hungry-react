@@ -47,10 +47,21 @@ function App() {
           alignItems: "center",
         }}
       >
-        <img
+        {/* <img
           src={`${process.env.REACT_APP_BASE_URL}/images/hungrylogo.svg`}
           alt="Hungry"
-        />
+        /> */}
+        <span
+          style={{
+            fontWeight: 900,
+            letterSpacing: "0.5px",
+            fontSize: "1.5em",
+            padding: "1rem",
+          }}
+        >
+          <span style={{ color: "#fc283f" }}>H</span>
+          <span>UNGRY</span>
+        </span>
       </div>
     </>
   ) : (

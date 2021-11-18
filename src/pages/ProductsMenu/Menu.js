@@ -11,7 +11,7 @@ const Menu = () => {
     if (categories.length === 0) {
       getCategories();
     }
-  }, []);
+  }, [categories]);
 
   useEffect(() => {
     setCategories(categories);
