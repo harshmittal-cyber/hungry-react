@@ -90,17 +90,19 @@ const Navbar = () => {
                   style={{ objectFit: "cover" }}
                 />
               </Link> */}
-              <span
-                style={{
-                  fontWeight: 900,
-                  letterSpacing: "0.5px",
-                  fontSize: "1em",
-                  padding: "1rem",
-                }}
-              >
-                <span style={{ color: "#fc283f" }}>H</span>
-                <span>UNGRY</span>
-              </span>
+              <Link to="/">
+                <span
+                  style={{
+                    fontWeight: 900,
+                    letterSpacing: "0.5px",
+                    fontSize: "1em",
+                    padding: "1rem",
+                  }}
+                >
+                  <span style={{ color: "#fc283f" }}>H</span>
+                  <span>UNGRY</span>
+                </span>
+              </Link>
             </div>
             <ul className={`${styles.menu_items} text-gray-700`}>
               {Sidebar.map((item, index) => {

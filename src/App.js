@@ -9,7 +9,6 @@ import { useLoading } from "./hooks/loader";
 import { getcartItems } from "./actions/cart.action";
 import { getAddress } from "./actions/address.action";
 import { getOrders } from "./actions/order.action";
-import { getCategories } from "./actions/menu.action";
 import ProgressBar from "./components/ProgressBar/ProgressBar";
 
 const LazyCheckout = React.lazy(() => import("./pages/Checkout/checkout"));
