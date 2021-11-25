@@ -57,12 +57,12 @@ export default function Orderdetails(props) {
                   <div className="text-xl  text-gray-900 sm:text-xl">
                     <span className="font-thin">Order</span> #{order.order_id}
                   </div>
-                  <a
+                  {/* <a
                     href="https://www.facebook.com"
                     className="hidden text-sm font-medium text-indigo-600 hover:text-indigo-500 sm:block"
                   >
                     View invoice<span aria-hidden="true"> &rarr;</span>
-                  </a>
+                  </a> */}
                 </div>
                 <p className="text-sm text-gray-600">
                   Order Placed on{" "}
@@ -73,12 +73,12 @@ export default function Orderdetails(props) {
                     {moment(order.createdAt).format("MMM Do,YYYY")}
                   </time>
                 </p>
-                <a
+                {/* <a
                   href="https://www.facebook.com"
                   className="text-sm font-medium text-indigo-600 hover:text-indigo-500 sm:hidden"
                 >
                   View invoice<span aria-hidden="true"> &rarr;</span>
-                </a>
+                </a> */}
               </div>
               <div className="border-t border-gray-200  py-6 px-4 mt-4 sm:px-6  lg:p-8 ">
                 <h4 className="sr-only">Status</h4>
